@@ -1,1 +1,335 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────
+   BASE
+──────────────────────────────────────────*/
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1a1a;
+    overflow-x: hidden;
+    background: #fff;
+  }
+
+  ::selection {
+    background: #7AAD5C33;
+    color: #1a1a1a;
+  }
+}
+
+/* ─────────────────────────────────────────
+   NAVBAR ANIMATIONS
+──────────────────────────────────────────*/
+@layer components {
+
+  /* Mega menu drop */
+  .mega-menu-enter {
+    animation: megaMenuEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: top center;
+  }
+
+  @keyframes megaMenuEnter {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scaleY(0.96);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+  /* Simple dropdown */
+  .simple-dropdown-enter {
+    animation: simpleDropdown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes simpleDropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile menu slide-in */
+  .mobile-menu-enter {
+    animation: mobileMenuEnter 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes mobileMenuEnter {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Hamburger line morph */
+  .ham-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* ─────────────────────────────────────────
+   HERO ANIMATIONS
+──────────────────────────────────────────*/
+  .hero-text-reveal {
+    opacity: 0;
+    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes heroReveal {
+    from {
+      opacity: 0;
+      transform: translateY(36px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-badge-pulse {
+    animation: badgePulse 3s ease-in-out infinite;
+  }
+
+  @keyframes badgePulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.03);
+    }
+  }
+
+  .scroll-line {
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0% {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(200%);
+      opacity: 0;
+    }
+  }
+
+  /* ─────────────────────────────────────────
+   SECTION REVEAL (Intersection Observer)
+──────────────────────────────────────────*/
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 {
+    transition-delay: 0.1s;
+  }
+
+  .reveal-delay-2 {
+    transition-delay: 0.2s;
+  }
+
+  .reveal-delay-3 {
+    transition-delay: 0.3s;
+  }
+
+  .reveal-delay-4 {
+    transition-delay: 0.45s;
+  }
+
+  .reveal-delay-5 {
+    transition-delay: 0.6s;
+  }
+
+  /* ─────────────────────────────────────────
+   DESTINATION CARD
+──────────────────────────────────────────*/
+  /* Note: 'group' class must be added directly in HTML, not via @apply */
+  .dest-card {
+    @apply relative rounded-2xl overflow-hidden cursor-pointer block;
+  }
+
+  .dest-card-img {
+    @apply w-full h-full object-cover transition-transform duration-700;
+  }
+
+  .dest-card:hover .dest-card-img {
+    transform: scale(1.1);
+  }
+
+  .dest-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent transition-opacity duration-300;
+  }
+
+  .dest-card-content {
+    @apply absolute bottom-0 left-0 right-0 p-5 transition-transform duration-300;
+    transform: translateY(8px);
+  }
+
+  .dest-card:hover .dest-card-content {
+    transform: translateY(0);
+  }
+
+  /* ─────────────────────────────────────────
+   PACKAGE CARD
+──────────────────────────────────────────*/
+  .pkg-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-400;
+  }
+
+  /* ─────────────────────────────────────────
+   FEATURE CARD (Why Us)
+──────────────────────────────────────────*/
+  .feature-card {
+    @apply p-7 rounded-2xl border border-gray-100 relative overflow-hidden hover:border-pista/40 hover:shadow-lg transition-all duration-300;
+  }
+
+  .feature-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-pista-50/0 to-pista-50/60 opacity-0 transition-opacity duration-300;
+  }
+
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+
+  /* ─────────────────────────────────────────
+   SECTION LABEL
+──────────────────────────────────────────*/
+  .section-label {
+    @apply text-[11px] font-semibold tracking-[0.25em] uppercase block mb-3;
+    color: #7AAD5C;
+  }
+
+  .section-title {
+    @apply font-display font-light leading-tight text-gray-900;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+  }
+
+  .section-title em {
+    @apply not-italic font-semibold;
+  }
+
+  /* ─────────────────────────────────────────
+   FILTER TABS
+──────────────────────────────────────────*/
+  .filter-tab {
+    @apply px-5 py-2 rounded-full text-sm font-body font-medium border border-gray-200 text-gray-600 transition-all duration-200 cursor-pointer;
+  }
+
+  .filter-tab.active,
+  .filter-tab:hover {
+    background: #7AAD5C;
+    color: white;
+    border-color: #7AAD5C;
+  }
+
+  /* ─────────────────────────────────────────
+   TESTIMONIAL CARD
+──────────────────────────────────────────*/
+  .testimonial-card {
+    @apply bg-white p-8 rounded-2xl relative overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300;
+  }
+
+  /* ─────────────────────────────────────────
+   FLOATING BUTTONS
+──────────────────────────────────────────*/
+  .float-btn {
+    @apply fixed z-50 flex items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-110;
+  }
+
+  /* ─────────────────────────────────────────
+   SEARCH MODAL
+──────────────────────────────────────────*/
+  .search-modal {
+    animation: searchModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes searchModalIn {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* ─────────────────────────────────────────
+   COUNTER ANIMATION
+──────────────────────────────────────────*/
+  .counter-num {
+    display: inline-block;
+    animation: countUp 2s ease-out forwards;
+  }
+
+  /* ─────────────────────────────────────────
+   PLAN TRIP FORM SECTION
+──────────────────────────────────────────*/
+  .form-input {
+    @apply w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/50 text-sm font-body focus:outline-none focus:border-white/60 focus:bg-white/15 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3.5 bg-white font-body font-semibold rounded-full text-sm tracking-wide hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200;
+    color: #5C8A3E;
+  }
+
+  .btn-outline-white {
+    @apply px-8 py-3.5 border border-white/50 text-white font-body font-medium rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-200 backdrop-blur-sm;
+  }
+
+  .btn-pista {
+    @apply px-6 py-3 rounded-full text-white font-body font-semibold text-sm hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200;
+    background: #7AAD5C;
+  }
+
+  .btn-pista:hover {
+    background: #5C8A3E;
+  }
+}

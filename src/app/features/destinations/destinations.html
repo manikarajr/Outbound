@@ -1,0 +1,104 @@
+<!-- ╔══════════════════════════════════════════════════
+     DESTINATIONS – Editorial Bento Grid
+═══════════════════════════════════════════════════╗ -->
+<section id="destinations" class="py-24 bg-white">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+      <div>
+        <span class="section-label">Explore</span>
+        <h2 class="section-title">
+          Popular <em>Destinations</em>
+        </h2>
+      </div>
+      <div class="flex flex-col items-start md:items-end gap-3">
+        <!-- Filter Tabs -->
+        <div class="flex gap-2 flex-wrap">
+          <button *ngFor="let tab of tabs" class="filter-tab" [class.active]="activeTab() === tab.key"
+            (click)="setTab(tab.key)">{{ tab.label }}</button>
+        </div>
+        <a href="#" class="text-sm font-body font-medium hover:underline underline-offset-2 transition-colors"
+          style="color:#7AAD5C;">
+          View All Destinations →
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[280px]">
+      <a *ngFor="let dest of filteredDestinations(); let i = index" href="#" class="dest-card"
+        [class.lg:col-span-2]="dest.featured" [class.lg:row-span-2]="dest.tall" [class.sm:row-span-2]="dest.tall"
+        [style.animation-delay]="(i * 0.08) + 's'">
+        <!-- Image -->
+        <div class="w-full h-full overflow-hidden">
+          <img [src]="dest.img" [alt]="dest.name" class="dest-card-img" />
+        </div>
+
+        <!-- Overlay -->
+        <div class="dest-card-overlay"></div>
+
+        <!-- Tag Badge -->
+        <span
+          class="absolute top-4 left-4 px-3 py-1 text-[10px] font-body font-bold tracking-widest uppercase rounded-full bg-white/90 backdrop-blur-sm"
+          style="color:#5C8A3E;">
+          {{ dest.tag }}
+        </span>
+
+        <!-- Wishlist -->
+        <button
+          class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </button>
+
+        <!-- Content -->
+        <div class="dest-card-content">
+          <div class="flex items-end justify-between">
+            <div>
+              <h3 class="text-white font-display text-2xl font-semibold leading-tight">{{ dest.name }}</h3>
+              <p class="text-white/65 text-xs font-body mt-0.5">{{ dest.nights }}</p>
+            </div>
+            <div class="text-right">
+              <p class="text-white/60 text-[10px] font-body uppercase tracking-wide">From</p>
+              <p class="text-white font-body font-bold text-base">{{ dest.price }}</p>
+            </div>
+          </div>
+          <!-- Hover line -->
+          <div class="mt-3 h-px bg-white/20 w-0 group-hover:w-full transition-all duration-500 rounded-full"></div>
+          <!-- View link (appears on hover) -->
+          <div class="overflow-hidden h-0 group-hover:h-7 transition-all duration-300 mt-1">
+            <span class="flex items-center gap-1 text-xs text-white/80 font-body font-medium mt-1">
+              View Package
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </div>
+
+      </a>
+    </div>
+
+    <!-- CTA Bar -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-7 rounded-2xl"
+      style="background: linear-gradient(135deg, #f0f7ea 0%, #e8f5dc 100%);">
+      <div>
+        <p class="font-body font-semibold text-gray-900 text-[1.05rem]">
+          Can't find what you're looking for?
+        </p>
+        <p class="text-gray-500 text-sm font-body mt-0.5">We craft custom itineraries for every dream destination.</p>
+      </div>
+      <a href="#contact" class="btn-pista whitespace-nowrap inline-flex items-center gap-2">
+        Request Custom Tour
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

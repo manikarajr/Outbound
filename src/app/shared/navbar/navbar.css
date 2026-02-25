@@ -1,0 +1,334 @@
+/* ══════════════════════════════════════════════════
+   NAVBAR – Mega Menu Styles
+   Theme: Pista Green (#7AAD5C) · Dark Panels
+══════════════════════════════════════════════════ */
+
+/* ── CSS Variables ─────────────────────────────── */
+:host {
+    --pista: #7AAD5C;
+    --pista-dark: #5C8A3E;
+    --pista-light: #93C572;
+    --panel-bg: #111714;
+    --panel-card: #1a2318;
+    --panel-card2: #1f2a1c;
+}
+
+/* ── Root bar ──────────────────────────────────── */
+.navbar-root {
+    background-color: var(--pista);
+}
+
+.nav-scrolled {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+}
+
+.nav-default {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Logo ──────────────────────────────────────── */
+.logo-icon {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.logo-primary {
+    color: #fff;
+    font-family: 'Georgia', serif;
+}
+
+.logo-secondary {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Nav links ─────────────────────────────────── */
+.nav-link {
+    color: rgba(255, 255, 255, 0.88);
+    font-family: system-ui, sans-serif;
+}
+
+.nav-link:hover,
+.nav-link-active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Right icons ───────────────────────────────── */
+.nav-icon-btn {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-icon-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* ── CTA button ────────────────────────────────── */
+.cta-main {
+    background: #fff;
+    color: var(--pista-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.cta-main:hover {
+    box-shadow: 0 4px 16px rgba(122, 173, 92, 0.4);
+}
+
+/* ── Mega Panel Wrapper ────────────────────────── */
+/*
+ * Fix: switched from position:absolute (relative to <li>) to
+ * position:fixed so the panel is centred on the viewport, not
+ * on whichever nav item triggered it.  The !important flags are
+ * needed to override the Tailwind utility classes that are still
+ * on the element (absolute, top-full, left-1/2, -translate-x-1/2).
+ */
+.mega-panel {
+    position: fixed !important;
+    top: 74px !important;
+    /* navbar height (72px) + 2px breathing room */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-top: 0 !important;
+    z-index: 999;
+    animation: panelEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes panelEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ── Mega inner panel ──────────────────────────── */
+.mega-inner {
+    background: var(--panel-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ── Mega header strip ─────────────────────────── */
+.mega-header {
+    background: linear-gradient(135deg, var(--pista-dark) 0%, var(--pista) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-pill {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.2s;
+}
+
+.cta-pill:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+/* ── Mega body ─────────────────────────────────── */
+.mega-body {
+    background: var(--panel-bg);
+}
+
+/* ── Column labels ─────────────────────────────── */
+.section-label {
+    color: var(--pista-light);
+}
+
+/* ── Destination list rows ─────────────────────── */
+.dest-link {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.dest-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dest-name {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dest-nights {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Hover text color for destination names */
+.dest-link:hover .dest-name {
+    color: var(--pista-light);
+}
+
+/* ── Package cards ─────────────────────────────── */
+.pkg-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pkg-card:hover {
+    transform: scale(1.02);
+}
+
+.pkg-badge {
+    background: var(--pista);
+    color: #fff;
+}
+
+/* ── Honeymoon cards ───────────────────────────── */
+.honey-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: #fff;
+}
+
+.honey-hero {
+    transition: transform 0.3s ease;
+}
+
+.honey-hero:hover {
+    transform: scale(1.01);
+}
+
+.honey-card {
+    transition: transform 0.3s ease;
+}
+
+.honey-card:hover {
+    transform: scale(1.02);
+}
+
+/* ── International cards ───────────────────────── */
+.intl-card {
+    transition: transform 0.3s ease;
+}
+
+.intl-card:hover {
+    transform: scale(1.02);
+}
+
+.intl-overlay {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* ── Corporate cards ───────────────────────────── */
+.corp-card {
+    transition: transform 0.3s ease;
+}
+
+.corp-card:hover {
+    transform: scale(1.02);
+}
+
+.corp-stat {
+    background: var(--panel-card2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.corp-stat-icon {
+    background: rgba(122, 173, 92, 0.15);
+}
+
+.stat-value {
+    color: var(--pista-light);
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Featured card ─────────────────────────────── */
+.featured-btn {
+    background: var(--pista);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.featured-btn:hover {
+    background: var(--pista-dark);
+    transform: translateY(-1px);
+}
+
+/* ── Search bar ────────────────────────────────── */
+.search-bar-drop {
+    background: rgba(255, 255, 255, 0.97);
+}
+
+.search-input {
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+/* ── Hamburger lines ───────────────────────────── */
+.ham-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+}
+
+/* ── Mobile menu ───────────────────────────────── */
+.mobile-menu {
+    background: #fff;
+    animation: slideDown 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-nav-btn {
+    color: #1a1a1a;
+    font-family: system-ui, sans-serif;
+}
+
+.mobile-nav-btn:hover {
+    background: #f5f5f5;
+}
+
+.mobile-section-label {
+    color: var(--pista-dark);
+}
+
+.mobile-dest-card {
+    overflow: hidden;
+}
+
+.mobile-cta-outline {
+    color: var(--pista-dark);
+    border-color: #ddd;
+}
+
+.mobile-cta-outline:hover {
+    border-color: var(--pista);
+    color: var(--pista);
+}
+
+/* ── Scrollbar inside mega ─────────────────────── */
+.mega-inner *::-webkit-scrollbar {
+    width: 3px;
+}
+
+.mega-inner *::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* ── Utility ───────────────────────────────────── */
+.text-pista {
+    color: var(--pista-light);
+}
+
+/* ── Thumbnail ring style ─────────────────────── */
+.dest-thumb {
+    background: rgba(255, 255, 255, 0.05);
+}

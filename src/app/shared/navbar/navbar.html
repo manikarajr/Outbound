@@ -1,0 +1,501 @@
+<header [class]="isScrolled() ? 'nav-scrolled' : 'nav-default'"
+  class="navbar-root fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-[1440px] mx-auto px-6 lg:px-12 h-[72px] flex items-center justify-between gap-4">
+
+    <!-- ── LOGO ─────────────────────────────────── -->
+    <a href="/" class="flex items-center gap-3 shrink-0 group">
+      <div
+        class="logo-icon w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14.5" stroke="white" stroke-width="1.5" />
+          <path d="M6 16 Q16 5 26 16 Q16 27 6 16Z" fill="white" opacity="0.95" />
+          <path d="M16 3 L16 29" stroke="white" stroke-width="1" opacity="0.5" />
+          <path d="M3 16 L29 16" stroke="white" stroke-width="1" opacity="0.5" />
+        </svg>
+      </div>
+      <div class="hidden sm:block leading-none">
+        <span class="logo-primary block font-bold text-[1.2rem] tracking-tight">Outbound</span>
+        <span class="logo-secondary text-[0.6rem] font-semibold tracking-[0.28em] uppercase">Travelers</span>
+      </div>
+    </a>
+
+    <!-- ── DESKTOP CENTER MENU ───────────────────── -->
+    <ul class="hidden lg:flex items-center gap-0" (mouseleave)="closeMenu()">
+      <li *ngFor="let item of navItems" class="relative" (mouseenter)="openMenu(item.key)">
+        <a [href]="item.href || '#'"
+          class="nav-link flex items-center gap-1.5 px-4 py-2.5 text-[0.85rem] font-semibold tracking-wide rounded-xl transition-all duration-200 whitespace-nowrap"
+          [class.nav-link-active]="activeMenu() === item.key">
+          {{ item.label }}
+          <svg *ngIf="item.hasMega || item.hasDropdown" class="w-3 h-3 transition-transform duration-300 opacity-60"
+            [class.rotate-180]="activeMenu() === item.key" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+
+        <!-- ══ DESTINATIONS MEGA MENU ══ -->
+        <div *ngIf="item.key === 'destinations' && item.hasMega && activeMenu() === item.key"
+          class="mega-panel absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[980px]"
+          (mouseenter)="openMenu('destinations')" (mouseleave)="closeMenu()">
+          <div class="mega-inner rounded-2xl overflow-hidden shadow-2xl">
+
+            <!-- Header strip -->
+            <div class="mega-header px-8 py-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-base tracking-wide">Explore Destinations</p>
+                <p class="text-white/60 text-xs tracking-wider mt-0.5">Handcrafted journeys for every kind of traveler
+                </p>
+              </div>
+              <a href="#packages" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">View All</a>
+            </div>
+
+            <!-- Content grid -->
+            <div class="mega-body grid grid-cols-4 gap-0">
+
+              <!-- Domestic India -->
+              <div class="mega-col p-6 border-r border-white/5">
+                <p class="section-label text-[10px] font-extrabold tracking-[0.22em] uppercase mb-4">Domestic India</p>
+                <ul class="space-y-1">
+                  <li *ngFor="let dest of domestic">
+                    <a href="#"
+                      class="dest-link group flex items-center gap-3 p-2 rounded-xl transition-all duration-200">
+                      <div class="dest-thumb w-9 h-9 rounded-lg overflow-hidden shrink-0 ring-1 ring-white/10">
+                        <img [src]="dest.thumb" [alt]="dest.name"
+                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      </div>
+                      <div class="min-w-0">
+                        <p class="dest-name text-sm font-semibold truncate group-hover:text-pista transition-colors">{{
+                          dest.name }}</p>
+                        <p class="dest-nights text-[10px] opacity-50">{{ dest.nights }}</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- International -->
+              <div class="mega-col p-6 border-r border-white/5">
+                <p class="section-label text-[10px] font-extrabold tracking-[0.22em] uppercase mb-4">International</p>
+                <ul class="space-y-1">
+                  <li *ngFor="let dest of international">
+                    <a href="#"
+                      class="dest-link group flex items-center gap-3 p-2 rounded-xl transition-all duration-200">
+                      <div class="dest-thumb w-9 h-9 rounded-lg overflow-hidden shrink-0 ring-1 ring-white/10">
+                        <img [src]="dest.thumb" [alt]="dest.name"
+                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      </div>
+                      <div class="min-w-0">
+                        <p class="dest-name text-sm font-semibold truncate group-hover:text-pista transition-colors">{{
+                          dest.name }}</p>
+                        <p class="dest-nights text-[10px] opacity-50">{{ dest.nights }}</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Travel Styles -->
+              <div class="mega-col p-6 border-r border-white/5">
+                <p class="section-label text-[10px] font-extrabold tracking-[0.22em] uppercase mb-4">Travel Styles</p>
+                <ul class="space-y-1">
+                  <li *ngFor="let style of travelStyles">
+                    <a href="#"
+                      class="dest-link group flex items-center gap-3 p-2 rounded-xl transition-all duration-200">
+                      <div class="dest-thumb w-9 h-9 rounded-lg overflow-hidden shrink-0 ring-1 ring-white/10">
+                        <img [src]="style.thumb" [alt]="style.name"
+                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      </div>
+                      <p class="dest-name text-sm font-semibold group-hover:text-pista transition-colors">{{ style.name
+                        }}</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Featured Card -->
+              <div class="relative overflow-hidden min-h-[340px]">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=85" alt="Featured"
+                  class="w-full h-full object-cover absolute inset-0 scale-105 hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div class="relative z-10 flex flex-col justify-end h-full p-6">
+                  <span class="text-white/60 text-[9px] tracking-[0.3em] uppercase mb-2 block">Featured
+                    Experience</span>
+                  <p class="text-white font-bold text-xl leading-tight mb-4">Explore the World<br>with Confidence</p>
+                  <a href="#contact"
+                    class="featured-btn text-xs font-bold text-white px-5 py-2.5 rounded-full text-center block">Plan
+                    Your Journey →</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ PACKAGES MEGA MENU ══ -->
+        <div *ngIf="item.key === 'packages' && item.hasDropdown && activeMenu() === item.key"
+          class="mega-panel absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[860px]"
+          (mouseenter)="openMenu('packages')" (mouseleave)="closeMenu()">
+          <div class="mega-inner rounded-2xl overflow-hidden shadow-2xl">
+            <div class="mega-header px-8 py-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-base">Our Packages</p>
+                <p class="text-white/60 text-xs tracking-wider mt-0.5">Every budget, every dream — we've got a package
+                </p>
+              </div>
+              <a href="#packages" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">Browse All</a>
+            </div>
+            <div class="mega-body grid grid-cols-3 gap-6 p-6">
+              <ng-container *ngFor="let pkg of packages">
+                <a href="#" class="pkg-card group block rounded-xl overflow-hidden relative h-44 cursor-pointer">
+                  <img [src]="pkg.image" [alt]="pkg.label"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute inset-0 p-4 flex flex-col justify-end">
+                    <p class="text-white font-bold text-sm">{{ pkg.label }}</p>
+                    <p class="text-white/60 text-[11px] mt-0.5">{{ pkg.desc }}</p>
+                  </div>
+                  <div
+                    class="pkg-badge absolute top-3 right-3 text-[9px] font-bold px-2 py-1 rounded-full tracking-wide">
+                    {{ pkg.tag }}</div>
+                </a>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ HONEYMOON MEGA MENU ══ -->
+        <div *ngIf="item.key === 'honeymoon' && item.hasDropdown && activeMenu() === item.key"
+          class="mega-panel absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[920px]"
+          (mouseenter)="openMenu('honeymoon')" (mouseleave)="closeMenu()">
+          <div class="mega-inner rounded-2xl overflow-hidden shadow-2xl">
+            <div class="mega-header px-8 py-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-base">Honeymoon Escapes</p>
+                <p class="text-white/60 text-xs tracking-wider mt-0.5">Romantic getaways crafted for two</p>
+              </div>
+              <a href="#honeymoon" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">All Romance</a>
+            </div>
+            <div class="mega-body p-6">
+              <!-- Hero card + grid -->
+              <div class="grid grid-cols-[1.6fr_1fr_1fr] gap-4">
+                <!-- Hero -->
+                <a href="#" class="honey-hero group relative rounded-xl overflow-hidden h-56 cursor-pointer">
+                  <img [src]="honeymoonDestinations[0].image" [alt]="honeymoonDestinations[0].label"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+                  <div class="absolute inset-0 p-5 flex flex-col justify-end">
+                    <span
+                      class="honey-badge text-[9px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-full inline-block mb-2 w-fit">Most
+                      Popular</span>
+                    <p class="text-white font-bold text-lg">{{ honeymoonDestinations[0].label }}</p>
+                    <p class="text-white/60 text-xs mt-1">{{ honeymoonDestinations[0].nights }}</p>
+                  </div>
+                </a>
+                <!-- Small cards col 1 -->
+                <div class="flex flex-col gap-4">
+                  <a *ngFor="let h of honeymoonDestinations.slice(1,3)" href="#"
+                    class="honey-card group relative rounded-xl overflow-hidden h-[104px] cursor-pointer">
+                    <img [src]="h.image" [alt]="h.label"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute inset-0 p-3 flex flex-col justify-end">
+                      <p class="text-white font-semibold text-sm">{{ h.label }}</p>
+                      <p class="text-white/55 text-[10px]">{{ h.nights }}</p>
+                    </div>
+                  </a>
+                </div>
+                <!-- Small cards col 2 -->
+                <div class="flex flex-col gap-4">
+                  <a *ngFor="let h of honeymoonDestinations.slice(3,5)" href="#"
+                    class="honey-card group relative rounded-xl overflow-hidden h-[104px] cursor-pointer">
+                    <img [src]="h.image" [alt]="h.label"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute inset-0 p-3 flex flex-col justify-end">
+                      <p class="text-white font-semibold text-sm">{{ h.label }}</p>
+                      <p class="text-white/55 text-[10px]">{{ h.nights }}</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ INTERNATIONAL MEGA MENU ══ -->
+        <div *ngIf="item.key === 'international' && item.hasDropdown && activeMenu() === item.key"
+          class="mega-panel absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[940px]"
+          (mouseenter)="openMenu('international')" (mouseleave)="closeMenu()">
+          <div class="mega-inner rounded-2xl overflow-hidden shadow-2xl">
+            <div class="mega-header px-8 py-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-base">International Destinations</p>
+                <p class="text-white/60 text-xs tracking-wider mt-0.5">The world is your itinerary</p>
+              </div>
+              <a href="#international" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">Explore All</a>
+            </div>
+            <div class="mega-body p-6 grid grid-cols-5 gap-4">
+              <a *ngFor="let region of internationalRegions" href="#"
+                class="intl-card group relative rounded-xl overflow-hidden cursor-pointer" style="height: 200px;">
+                <img [src]="region.image" [alt]="region.label"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                <div class="absolute inset-0 p-3.5 flex flex-col justify-end">
+                  <p class="text-white font-bold text-sm leading-tight">{{ region.label }}</p>
+                  <p class="text-white/55 text-[10px] mt-0.5">{{ region.count }} packages</p>
+                </div>
+                <div
+                  class="intl-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span
+                    class="text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/50 backdrop-blur-sm">Explore</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ CORPORATE MEGA MENU ══ -->
+        <div *ngIf="item.key === 'corporate' && item.hasDropdown && activeMenu() === item.key"
+          class="mega-panel absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[900px]"
+          (mouseenter)="openMenu('corporate')" (mouseleave)="closeMenu()">
+          <div class="mega-inner rounded-2xl overflow-hidden shadow-2xl">
+            <div class="mega-header px-8 py-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-base">Corporate Travel Solutions</p>
+                <p class="text-white/60 text-xs tracking-wider mt-0.5">MICE, team outings & incentive programs</p>
+              </div>
+              <a href="#corporate" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">Get a Quote</a>
+            </div>
+            <div class="mega-body p-6">
+              <div class="grid grid-cols-4 gap-4">
+                <a *ngFor="let corp of corporateOptions" href="#"
+                  class="corp-card group relative rounded-xl overflow-hidden cursor-pointer" style="height: 180px;">
+                  <img [src]="corp.image" [alt]="corp.label"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/88 via-black/25 to-transparent"></div>
+                  <div class="absolute inset-0 p-4 flex flex-col justify-end">
+                    <p class="text-white font-bold text-sm">{{ corp.label }}</p>
+                    <p class="text-white/55 text-[11px] mt-1 leading-relaxed">{{ corp.desc }}</p>
+                  </div>
+                </a>
+              </div>
+              <!-- Stats row -->
+              <div class="grid grid-cols-3 gap-4 mt-5">
+                <div *ngFor="let stat of corpStats" class="corp-stat rounded-xl p-4 flex items-center gap-3">
+                  <div class="corp-stat-icon w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
+                    <img [src]="stat.icon" [alt]="stat.label" class="w-6 h-6 object-contain opacity-80" />
+                  </div>
+                  <div>
+                    <p class="stat-value font-extrabold text-lg leading-none">{{ stat.value }}</p>
+                    <p class="stat-label text-[11px] opacity-60 mt-0.5">{{ stat.label }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+    <!-- ── RIGHT ACTIONS ─────────────────────────── -->
+    <div class="hidden lg:flex items-center gap-2">
+      <button (click)="toggleSearch()" class="nav-icon-btn p-2.5 rounded-full transition-all duration-200"
+        aria-label="Search">
+        <svg class="w-[17px] h-[17px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+      <a href="https://wa.me/919999999999" target="_blank"
+        class="nav-icon-btn p-2.5 rounded-full transition-all duration-200" aria-label="WhatsApp">
+        <svg class="w-[17px] h-[17px]" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </a>
+      <a href="tel:+919999999999" class="nav-icon-btn p-2.5 rounded-full transition-all duration-200"
+        aria-label="Call us">
+        <svg class="w-[17px] h-[17px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+        </svg>
+      </a>
+      <div class="w-px h-5 bg-white/20 mx-1"></div>
+      <a href="#contact"
+        class="cta-main px-5 py-2.5 rounded-full text-[0.82rem] font-bold tracking-wide whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5">
+        Plan Your Trip
+      </a>
+    </div>
+
+    <!-- ── HAMBURGER ───────────────────────────────── -->
+    <button (click)="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl transition-colors nav-icon-btn"
+      aria-label="Toggle menu">
+      <div class="flex flex-col gap-[5px]">
+        <span class="ham-line" [style.transform]="isMobileMenuOpen() ? 'rotate(45deg) translate(4px, 5px)' : ''"></span>
+        <span class="ham-line" [style.opacity]="isMobileMenuOpen() ? '0' : '1'"></span>
+        <span class="ham-line"
+          [style.transform]="isMobileMenuOpen() ? 'rotate(-45deg) translate(4px, -5px)' : ''"></span>
+      </div>
+    </button>
+
+  </nav>
+
+  <!-- ── SEARCH BAR ──────── -->
+  <div *ngIf="isSearchOpen()" class="search-bar-drop border-t border-white/10 px-6 py-4 backdrop-blur-md">
+    <div class="max-w-[1440px] mx-auto flex items-center gap-3">
+      <svg class="w-5 h-5 shrink-0 text-pista" fill="none" viewBox="0 0 24 24" stroke="#7AAD5C" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input type="text" placeholder="Search destinations, packages, experiences…"
+        class="search-input flex-1 text-sm bg-transparent focus:outline-none" autofocus />
+      <button (click)="toggleSearch()" class="text-gray-400 hover:text-gray-600 transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── MOBILE FULL-SCREEN MENU ──────────────────── -->
+<div *ngIf="isMobileMenuOpen()" class="mobile-menu lg:hidden fixed inset-0 top-[72px] z-40 overflow-y-auto">
+  <div class="px-5 py-6">
+    <ul class="space-y-0.5">
+      <li *ngFor="let item of navItems">
+        <button *ngIf="item.hasMega || item.hasDropdown" (click)="toggleMobileAccordion(item.key)"
+          class="mobile-nav-btn w-full flex items-center justify-between px-4 py-4 rounded-xl transition-colors text-[0.95rem] font-semibold">
+          {{ item.label }}
+          <svg class="w-4 h-4 transition-transform duration-200"
+            [class.rotate-180]="activeMobileAccordion() === item.key" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <!-- Mobile accordion -->
+        <div *ngIf="(item.hasMega || item.hasDropdown) && activeMobileAccordion() === item.key"
+          class="mobile-accordion mt-1 ml-3 pl-4 border-l-2 border-pista/40 pb-4 space-y-2">
+
+          <!-- Destinations accordion -->
+          <ng-container *ngIf="item.key === 'destinations'">
+            <p class="mobile-section-label text-[9px] font-extrabold tracking-[0.25em] uppercase mt-3 mb-2">Domestic
+              India</p>
+            <div class="grid grid-cols-2 gap-2">
+              <a *ngFor="let d of domestic" href="#"
+                class="mobile-dest-card group relative rounded-xl overflow-hidden h-20">
+                <img [src]="d.thumb" [alt]="d.name" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute inset-0 p-2 flex flex-col justify-end">
+                  <p class="text-white text-xs font-bold">{{ d.name }}</p>
+                  <p class="text-white/60 text-[9px]">{{ d.nights }}</p>
+                </div>
+              </a>
+            </div>
+            <p class="mobile-section-label text-[9px] font-extrabold tracking-[0.25em] uppercase mt-4 mb-2">
+              International</p>
+            <div class="grid grid-cols-2 gap-2">
+              <a *ngFor="let i of international" href="#"
+                class="mobile-dest-card group relative rounded-xl overflow-hidden h-20">
+                <img [src]="i.thumb" [alt]="i.name" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute inset-0 p-2 flex flex-col justify-end">
+                  <p class="text-white text-xs font-bold">{{ i.name }}</p>
+                  <p class="text-white/60 text-[9px]">{{ i.nights }}</p>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+
+          <!-- Packages accordion -->
+          <ng-container *ngIf="item.key === 'packages'">
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <a *ngFor="let pkg of packages" href="#"
+                class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
+                <img [src]="pkg.image" [alt]="pkg.label" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute inset-0 p-2.5 flex flex-col justify-end">
+                  <p class="text-white text-xs font-bold">{{ pkg.label }}</p>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+
+          <!-- Honeymoon accordion -->
+          <ng-container *ngIf="item.key === 'honeymoon'">
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <a *ngFor="let h of honeymoonDestinations" href="#"
+                class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
+                <img [src]="h.image" [alt]="h.label" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute inset-0 p-2.5 flex flex-col justify-end">
+                  <p class="text-white text-xs font-bold">{{ h.label }}</p>
+                  <p class="text-white/60 text-[9px]">{{ h.nights }}</p>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+
+          <!-- International accordion -->
+          <ng-container *ngIf="item.key === 'international'">
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <a *ngFor="let r of internationalRegions" href="#"
+                class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
+                <img [src]="r.image" [alt]="r.label" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute inset-0 p-2.5 flex flex-col justify-end">
+                  <p class="text-white text-xs font-bold">{{ r.label }}</p>
+                  <p class="text-white/60 text-[9px]">{{ r.count }} packages</p>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+
+          <!-- Corporate accordion -->
+          <ng-container *ngIf="item.key === 'corporate'">
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <a *ngFor="let c of corporateOptions" href="#"
+                class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
+                <img [src]="c.image" [alt]="c.label" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div class="absolute inset-0 p-2.5 flex flex-col justify-end">
+                  <p class="text-white text-xs font-bold">{{ c.label }}</p>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+        </div>
+
+        <a *ngIf="!item.hasMega && !item.hasDropdown" [href]="item.href || '#'"
+          class="mobile-nav-btn block px-4 py-4 rounded-xl transition-colors text-[0.95rem] font-semibold">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile CTAs -->
+    <div class="mt-8 space-y-3 pb-10">
+      <a href="tel:+919999999999"
+        class="mobile-cta-outline flex items-center justify-center gap-2 w-full py-3.5 border rounded-xl font-semibold text-sm">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z" />
+        </svg>
+        Call Us Now
+      </a>
+      <a href="https://wa.me/919999999999" target="_blank"
+        class="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-white font-bold text-sm"
+        style="background-color:#25D366;">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        WhatsApp Us
+      </a>
+      <a href="#contact" (click)="toggleMobileMenu()"
+        class="flex items-center justify-center w-full py-3.5 rounded-xl text-white font-bold text-sm"
+        style="background-color:#7AAD5C;">
+        Plan Your Trip
+      </a>
+    </div>
+  </div>
+</div>
