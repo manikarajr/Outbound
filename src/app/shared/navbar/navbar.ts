@@ -1,5 +1,6 @@
 import { Component, HostListener, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 
 interface NavItem {
@@ -12,7 +13,7 @@ interface NavItem {
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
@@ -28,12 +29,12 @@ export class Navbar implements OnDestroy {
   private closeTimer: ReturnType<typeof setTimeout> | null = null;
 
   navItems: NavItem[] = [
-    { label: 'Destinations', key: 'destinations', hasMega: true },
-    { label: 'Packages', key: 'packages', hasDropdown: true, href: '#packages' },
-    { label: 'Honeymoon', key: 'honeymoon', hasDropdown: true, href: '#honeymoon' },
-    { label: 'International', key: 'international', hasDropdown: true },
-    { label: 'Corporate', key: 'corporate', hasDropdown: true },
-    { label: 'About Us', key: 'about', href: '#why-us' },
+    { label: 'Destinations', key: 'destinations', hasMega: true, href: '/destinations' },
+    { label: 'Packages', key: 'packages', hasDropdown: true, href: '/packages' },
+    { label: 'Honeymoon', key: 'honeymoon', hasDropdown: true, href: '/honeymoon' },
+    { label: 'International', key: 'international', hasDropdown: true, href: '/international' },
+    { label: 'Corporate', key: 'corporate', hasDropdown: true, href: '/corporate' },
+    { label: 'About Us', key: 'about', href: '/#why-us' },
   ];
 
   // ── Destinations ──────────────────────────────────────────────────

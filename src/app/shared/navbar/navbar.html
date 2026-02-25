@@ -22,7 +22,7 @@
     <!-- ── DESKTOP CENTER MENU ───────────────────── -->
     <ul class="hidden lg:flex items-center gap-0" (mouseleave)="closeMenu()">
       <li *ngFor="let item of navItems" class="relative" (mouseenter)="openMenu(item.key)">
-        <a [href]="item.href || '#'"
+        <a [routerLink]="item.href || '/'"
           class="nav-link flex items-center gap-1.5 px-4 py-2.5 text-[0.85rem] font-semibold tracking-wide rounded-xl transition-all duration-200 whitespace-nowrap"
           [class.nav-link-active]="activeMenu() === item.key">
           {{ item.label }}
@@ -321,26 +321,38 @@
         </svg>
       </a>
       <div class="w-px h-5 bg-white/20 mx-1"></div>
-      <a href="#contact"
+      <a [routerLink]="['/']"
         class="cta-main px-5 py-2.5 rounded-full text-[0.82rem] font-bold tracking-wide whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5">
         Plan Your Trip
       </a>
     </div>
 
-    <!-- ── HAMBURGER ───────────────────────────────── -->
-    <button (click)="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl transition-colors nav-icon-btn"
-      aria-label="Toggle menu">
-      <div class="flex flex-col gap-[5px]">
-        <span class="ham-line" [style.transform]="isMobileMenuOpen() ? 'rotate(45deg) translate(4px, 5px)' : ''"></span>
-        <span class="ham-line" [style.opacity]="isMobileMenuOpen() ? '0' : '1'"></span>
-        <span class="ham-line"
-          [style.transform]="isMobileMenuOpen() ? 'rotate(-45deg) translate(4px, -5px)' : ''"></span>
-      </div>
-    </button>
+    <!-- ── MOBILE RIGHT ACTIONS (Search + Hamburger) ───── -->
+    <div class="lg:hidden flex items-center gap-1">
+
+      <!-- Mobile Search Icon -->
+      <button (click)="toggleSearch()" class="p-2.5 rounded-xl transition-colors nav-icon-btn"
+        aria-label="Search">
+        <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+
+      <!-- Hamburger -->
+      <button (click)="toggleMobileMenu()" class="p-2.5 rounded-xl transition-colors nav-icon-btn"
+        aria-label="Toggle menu">
+        <div class="flex flex-col gap-[5px]">
+          <span class="ham-line" [style.transform]="isMobileMenuOpen() ? 'rotate(45deg) translate(4px, 5px)' : ''"></span>
+          <span class="ham-line" [style.opacity]="isMobileMenuOpen() ? '0' : '1'"></span>
+          <span class="ham-line" [style.transform]="isMobileMenuOpen() ? 'rotate(-45deg) translate(4px, -5px)' : ''"></span>
+        </div>
+      </button>
+
+    </div>
 
   </nav>
 
-  <!-- ── SEARCH BAR ──────── -->
+  <!-- ── SEARCH BAR (desktop slide-down + mobile tap-to-open) ──────────── -->
   <div *ngIf="isSearchOpen()" class="search-bar-drop border-t border-white/10 px-6 py-4 backdrop-blur-md">
     <div class="max-w-[1440px] mx-auto flex items-center gap-3">
       <svg class="w-5 h-5 shrink-0 text-pista" fill="none" viewBox="0 0 24 24" stroke="#7AAD5C" stroke-width="2">
@@ -355,11 +367,29 @@
       </button>
     </div>
   </div>
+
 </header>
 
 <!-- ── MOBILE FULL-SCREEN MENU ──────────────────── -->
 <div *ngIf="isMobileMenuOpen()" class="mobile-menu lg:hidden fixed inset-0 top-[72px] z-40 overflow-y-auto">
   <div class="px-5 py-6">
+
+    <!-- ── MOBILE SEARCH BAR ─────────────────────── -->
+    <div class="mobile-search-wrap flex items-center gap-3 px-4 py-3 rounded-2xl mb-5">
+      <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#7AAD5C" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input
+        type="text"
+        placeholder="Search destinations, packages…"
+        class="mobile-search-input flex-1 text-sm bg-transparent focus:outline-none"
+      />
+      <svg class="w-4 h-4 shrink-0 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+    <!-- ── END MOBILE SEARCH BAR ─────────────────── -->
+
     <ul class="space-y-0.5">
       <li *ngFor="let item of navItems">
         <button *ngIf="item.hasMega || item.hasDropdown" (click)="toggleMobileAccordion(item.key)"
@@ -465,7 +495,7 @@
           </ng-container>
         </div>
 
-        <a *ngIf="!item.hasMega && !item.hasDropdown" [href]="item.href || '#'"
+        <a *ngIf="!item.hasMega && !item.hasDropdown" [routerLink]="item.href || '/'"
           class="mobile-nav-btn block px-4 py-4 rounded-xl transition-colors text-[0.95rem] font-semibold">
           {{ item.label }}
         </a>
@@ -491,7 +521,7 @@
         </svg>
         WhatsApp Us
       </a>
-      <a href="#contact" (click)="toggleMobileMenu()"
+      <a [routerLink]="['/']" (click)="toggleMobileMenu()"
         class="flex items-center justify-center w-full py-3.5 rounded-xl text-white font-bold text-sm"
         style="background-color:#7AAD5C;">
         Plan Your Trip
