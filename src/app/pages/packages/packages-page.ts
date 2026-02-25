@@ -4,11 +4,17 @@ import { RouterLink } from '@angular/router';
 
 interface Package {
   id: string;
-  label: string;
+  title: string;
+  locations: string;
+  duration: string;
+  group: string;
+  price: string;
+  img: string;
+  badge: string;
+  badgeColor: string;
+  rating: string;
+  inclusions: string[];
   tag: string;
-  desc: string;
-  image: string;
-  price?: string;
 }
 
 @Component({
@@ -45,29 +51,71 @@ interface Package {
         </div>
 
         <!-- Packages Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article *ngFor="let pkg of filteredPackages"
-            class="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-[#7AAD5C] transition-all duration-300 hover:shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div *ngFor="let pkg of filteredPackages; let i = index" class="pkg-card" [style.animation-delay]="(i * 0.1) + 's'">
+            <!-- Image -->
             <div class="relative h-56 overflow-hidden">
-              <img [src]="pkg.image" [alt]="pkg.label"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <span class="bg-[#7AAD5C] text-white text-xs font-bold px-3 py-1 rounded-full">
-                  {{ pkg.tag }}
+              <img [src]="pkg.img" [alt]="pkg.title"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <!-- Badge -->
+              <span
+                class="absolute top-4 left-4 px-3 py-1 text-[10px] font-body font-bold tracking-widest uppercase rounded-full text-white"
+                [style.background]="pkg.badgeColor">
+                {{ pkg.badge }}
+              </span>
+              <!-- Rating -->
+              <div
+                class="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm">
+                <svg class="w-3 h-3" viewBox="0 0 20 20" fill="#FFD700">
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span class="text-white text-[11px] font-body font-semibold">{{ pkg.rating }}</span>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-6">
+              <p class="text-[11px] text-gray-400 font-body tracking-widest uppercase mb-1.5">{{ pkg.locations }}</p>
+              <h3 class="font-display text-xl text-gray-900 font-semibold mb-1.5 leading-tight">{{ pkg.title }}</h3>
+
+              <!-- Meta -->
+              <div class="flex items-center gap-4 text-gray-400 text-xs font-body mb-4">
+                <span class="flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  {{ pkg.duration }}
+                </span>
+                <span class="flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {{ pkg.group }}
                 </span>
               </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ pkg.label }}</h3>
-              <p class="text-gray-600 text-sm mb-4">{{ pkg.desc }}</p>
-              <div class="border-t border-gray-200 pt-4">
-                <button class="w-full bg-[#7AAD5C] hover:bg-[#5C8A3E] text-white font-semibold py-3 rounded-lg transition-colors duration-200">
-                  View Details →
-                </button>
+
+              <!-- Inclusions Chips -->
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span *ngFor="let inc of pkg.inclusions"
+                  class="px-2.5 py-1 rounded-full text-[10px] font-body font-medium bg-pista-50 text-pista-dark">{{ inc }}</span>
+              </div>
+
+              <!-- Price + CTA -->
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="text-[10px] text-gray-400 uppercase tracking-wide font-body">Starting from</span>
+                  <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ pkg.price }}</p>
+                  <span class="text-[10px] text-gray-400 font-body">per person</span>
+                </div>
+                <a href="#" class="btn-pista">
+                  View Details
+                </a>
               </div>
             </div>
-          </article>
+          </div>
         </div>
 
         <!-- Empty State -->
@@ -99,12 +147,90 @@ export class PackagesPage {
   selectedTag: string | null = null;
 
   packages: Package[] = [
-    { id: '1', label: 'All Packages', tag: 'Popular', desc: 'Curated trips for all budgets and preferences', image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=85' },
-    { id: '2', label: 'Budget Trips', tag: 'Value', desc: 'More travel, less spend - explore on your budget', image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=85' },
-    { id: '3', label: 'Luxury Escapes', tag: '5★', desc: 'Uncompromising comfort & style for the discerning traveler', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=85' },
-    { id: '4', label: 'Group Tours', tag: 'Social', desc: 'Travel with like-minded explorers and make new friends', image: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&q=85' },
-    { id: '5', label: 'Weekend Getaways', tag: 'Quick', desc: 'Recharge in just 2–3 days with our short escapes', image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=85' },
-    { id: '6', label: 'Family Holidays', tag: 'Kids ♥', desc: 'Safe, fun & unforgettable experiences for all ages', image: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=500&q=85' },
+    {
+      id: '1',
+      title: 'Southeast Asia Explorer',
+      locations: 'Thailand · Vietnam · Singapore',
+      duration: '12N / 13D',
+      group: 'Family & Couples',
+      price: '₹59,999',
+      img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=700&q=85',
+      badge: 'Best Seller',
+      badgeColor: '#7AAD5C',
+      rating: '4.9',
+      tag: 'Popular',
+      inclusions: ['Flights', 'Hotels', 'Breakfast', 'Transfers', 'Guide']
+    },
+    {
+      id: '2',
+      title: 'Budget Wanderer',
+      locations: 'India · Nepal · Bhutan',
+      duration: '8N / 9D',
+      group: 'Budget Travelers',
+      price: '₹16,999',
+      img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=85',
+      badge: 'Value',
+      badgeColor: '#FF6B6B',
+      rating: '4.6',
+      tag: 'Value',
+      inclusions: ['Flights', 'Budget Hotels', 'Breakfast', 'Shared Tours']
+    },
+    {
+      id: '3',
+      title: 'Luxury European Escape',
+      locations: 'Paris · Rome · Barcelona',
+      duration: '14N / 15D',
+      group: 'All Groups',
+      price: '₹2,49,999',
+      img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=85',
+      badge: 'Premium',
+      badgeColor: '#1a1a1a',
+      rating: '5.0',
+      tag: '5★',
+      inclusions: ['Flights', '5-Star Hotels', 'All Meals', 'Private Transfers', 'Guide']
+    },
+    {
+      id: '4',
+      title: 'Group Adventure Tour',
+      locations: 'Sri Lanka · Maldives',
+      duration: '6N / 7D',
+      group: 'Group Travelers',
+      price: '₹44,999',
+      img: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&q=85',
+      badge: 'Social',
+      badgeColor: '#4A90E2',
+      rating: '4.7',
+      tag: 'Social',
+      inclusions: ['Flights', 'Hotels', 'All Meals', 'Group Activities', 'Transfers']
+    },
+    {
+      id: '5',
+      title: 'Weekend Gateway Bliss',
+      locations: 'Goa · Himachal',
+      duration: '2N / 3D',
+      group: 'Couples & Families',
+      price: '₹9,999',
+      img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=85',
+      badge: 'Quick',
+      badgeColor: '#FF9800',
+      rating: '4.5',
+      tag: 'Quick',
+      inclusions: ['Hotels', 'Breakfast', 'Transfers', 'Activities']
+    },
+    {
+      id: '6',
+      title: 'Family Fun Holidays',
+      locations: 'Kerala · Andaman',
+      duration: '5N / 6D',
+      group: 'Families',
+      price: '₹36,999',
+      img: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=500&q=85',
+      badge: 'Kids ♥',
+      badgeColor: '#E91E63',
+      rating: '4.8',
+      tag: 'Kids ♥',
+      inclusions: ['Flights', 'Hotels', 'All Meals', 'Kid Activities', 'Transfers']
+    }
   ];
 
   get uniqueTags(): string[] {

@@ -1,94 +1,108 @@
 <!-- ╔══════════════════════════════════════════════════
      HERO – Full-Screen Cinematic  |  Mobile-First
 ═══════════════════════════════════════════════════╗ -->
-<section class="relative flex items-center justify-center overflow-hidden" style="
-    height: 100svh;          /* small-viewport height — iOS Safari fix */
-    min-height: 600px;
-    max-height: 1000px;
-  ">
+<section
+  class="relative flex items-center justify-center overflow-hidden"
+  style="height: 100svh; min-height: 600px; max-height: 1000px;"
+>
 
   <!-- ░░ BACKGROUND LAYER ░░ -->
   <div class="absolute inset-0 select-none pointer-events-none">
-    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=90" alt="Travel the world"
-      class="hero-bg-img w-full h-full object-cover" fetchpriority="high" loading="eager" />
-    <!-- Multi-layer overlays for depth -->
-    <div class="absolute inset-0"
-      style="background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.2) 45%, rgba(0,0,0,.72) 100%);">
-    </div>
-    <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(0,0,0,.38) 0%, transparent 55%);">
-    </div>
+    <img
+      src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=90"
+      alt="Travel the world"
+      class="hero-bg-img w-full h-full object-cover"
+      fetchpriority="high"
+      loading="eager"
+    />
+    <!-- Primary gradient overlay -->
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.2) 45%, rgba(0,0,0,.72) 100%);"
+    ></div>
+    <!-- Side gradient for depth -->
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, rgba(0,0,0,.38) 0%, transparent 55%);"
+    ></div>
   </div>
 
   <!-- ░░ DECORATIVE ORB ░░ -->
-  <div class="hero-orb absolute rounded-full pointer-events-none hidden sm:block" style="
-      width: 500px; height: 500px;
-      top: 20%; right: 15%;
-      background: #7AAD5C;
-      opacity: .06;
-      filter: blur(80px);
-    "></div>
+  <div
+    class="hero-orb absolute rounded-full pointer-events-none hidden sm:block"
+    style="width: 500px; height: 500px; top: 20%; right: 15%; background: #7AAD5C; opacity: .06; filter: blur(80px);"
+  ></div>
 
   <!-- ░░ MAIN CONTENT ░░ -->
   <div class="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center">
 
     <!-- Eyebrow badge -->
-    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 sm:mb-7" style="
+    <div
+      class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 sm:mb-7"
+      style="
         background: rgba(255,255,255,.1);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         border: 1px solid rgba(255,255,255,.2);
         animation-delay: .05s;
-      ">
-      <span class="w-2 h-2 rounded-full" style="background: #b8e08a; animation: pulse 2s infinite;"></span>
-      <span style="
-          font-family: 'DM Sans', system-ui, sans-serif;
-          font-size: .7rem;
-          font-weight: 500;
-          letter-spacing: .22em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,.85);
-        ">South India's Premier Travel Company</span>
+      "
+    >
+      <span class="w-2 h-2 rounded-full pulse-dot" style="background: #b8e08a;"></span>
+      <span
+        class="uppercase tracking-widest text-white/85"
+        style="font-family: 'DM Sans', system-ui, sans-serif; font-size: .7rem; font-weight: 500; letter-spacing: .22em;"
+      >
+        South India's Premier Travel Company
+      </span>
     </div>
 
     <!-- Main headline -->
-    <h1 class="reveal text-white font-light leading-tight mb-5 sm:mb-6" style="
+    <h1
+      class="reveal text-white font-light leading-tight mb-5 sm:mb-6"
+      style="
         font-family: 'Playfair Display', Georgia, serif;
         font-size: clamp(2.6rem, 9vw, 5.5rem);
         line-height: 1.06;
         animation-delay: .2s;
-      ">
+      "
+    >
       Your World,<br>
       <em class="not-italic font-semibold" style="color: #b8e08a;">Beautifully Explored</em>
     </h1>
 
     <!-- Subtext -->
-    <p class="reveal text-white/75 font-light max-w-sm sm:max-w-lg mx-auto mb-8 sm:mb-10 leading-relaxed" style="
+    <p
+      class="reveal text-white/75 font-light max-w-sm sm:max-w-lg mx-auto mb-8 sm:mb-10 leading-relaxed"
+      style="
         font-family: 'DM Sans', system-ui, sans-serif;
         font-size: clamp(.9rem, 3vw, 1.05rem);
         animation-delay: .38s;
-      ">
+      "
+    >
       Handcrafted journeys across India and beyond, trusted by
       <strong class="text-white font-medium">15,000+ travelers</strong> since 2010.
     </p>
 
     <!-- CTA Buttons -->
-    <div class="reveal flex flex-col sm:flex-row gap-3 sm:gap-3.5 w-full sm:w-auto justify-center"
-      style="animation-delay: .52s;">
-      <!-- Primary -->
+    <div
+      class="reveal flex flex-col sm:flex-row gap-3 sm:gap-3.5 w-full sm:w-auto justify-center"
+      style="animation-delay: .52s;"
+    >
+      <!-- Primary CTA -->
       <a href="#destinations" class="btn-primary">
         <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round"
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
         </svg>
         Explore Destinations
       </a>
 
-      <!-- Outline -->
+      <!-- Outline CTA -->
       <a href="#packages" class="btn-outline-white">
         View Packages
         <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
         </svg>
       </a>
     </div>
@@ -96,38 +110,32 @@
   </div>
 
   <!-- ░░ TRUST RIBBON (bottom) ░░ -->
-  <div class="reveal absolute bottom-0 left-0 right-0 hero-safe-bottom" style="
+  <div
+    class="reveal absolute bottom-0 left-0 right-0 hero-safe-bottom"
+    style="
       padding-left: clamp(1.25rem, 4vw, 2.5rem);
       padding-right: clamp(1.25rem, 4vw, 2.5rem);
       padding-bottom: clamp(1.5rem, 5vw, 2.5rem);
       animation-delay: .68s;
-    ">
+    "
+  >
     <div class="max-w-4xl mx-auto">
       <div class="trust-ribbon">
-        <ng-container *ngFor="let trust of trustItems; let i = index">
+        @for (trust of trustItems; track trust.label; let i = $index) {
           <div class="trust-cell">
             <span class="trust-number">
               {{ trust.number }}
-              <!-- Star icon for Google Rating -->
-              <svg *ngIf="trust.label === 'Google Rating'" class="w-4 h-4 shrink-0" viewBox="0 0 20 20" fill="#FFD700">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
+              <!-- Star icon only for Google Rating -->
+              @if (trust.label === 'Google Rating') {
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 20 20" fill="#FFD700">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              }
             </span>
             <span class="trust-label">{{ trust.label }}</span>
           </div>
-        </ng-container>
+        }
       </div>
-    </div>
-  </div>
-
-  <!-- ░░ SCROLL INDICATOR ░░ -->
-  <div class="absolute left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 text-white/45 hidden sm:flex"
-    style="bottom: calc(clamp(6rem, 12vw, 8rem) + env(safe-area-inset-bottom, 0px));">
-    <span
-      style="font-family:'DM Sans',sans-serif; font-size:.6rem; letter-spacing:.25em; text-transform:uppercase;">Scroll</span>
-    <div class="w-px h-8 rounded-full overflow-hidden" style="background:rgba(255,255,255,.18);">
-      <div class="scroll-line w-full rounded-full" style="height:45%; background:rgba(255,255,255,.7);"></div>
     </div>
   </div>
 

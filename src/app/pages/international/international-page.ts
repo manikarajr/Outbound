@@ -3,10 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 interface Region {
-  label: string;
-  count: number;
-  image: string;
-  description: string;
+  title: string;
+  locations: string;
+  duration: string;
+  group: string;
+  price: string;
+  img: string;
+  badge: string;
+  badgeColor: string;
+  rating: string;
+  inclusions: string[];
 }
 
 @Component({
@@ -34,32 +40,76 @@ interface Region {
           <div class="mb-12">
             <h2 class="text-4xl font-bold text-gray-900 mb-2">Explore by Region</h2>
             <p class="text-gray-600 text-lg">
-              Discover our curated collection of international destinations
+              Discover our curated international travel packages
             </p>
             <div class="h-1 w-20 bg-blue-600 rounded mt-4"></div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article *ngFor="let region of regions"
-              class="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-blue-600 transition-all duration-300 hover:shadow-2xl cursor-pointer">
-              <div class="relative h-64 overflow-hidden">
-                <img [src]="region.image" [alt]="region.label"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="text-center">
-                    <h3 class="text-3xl font-bold text-white mb-2">{{ region.label }}</h3>
-                    <p class="text-white/80 text-sm">{{ region.count }} destinations</p>
-                  </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+            <div *ngFor="let region of regions; let i = index" class="pkg-card" [style.animation-delay]="(i * 0.1) + 's'">
+              <!-- Image -->
+              <div class="relative h-56 overflow-hidden">
+                <img [src]="region.img" [alt]="region.title"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <!-- Badge -->
+                <span
+                  class="absolute top-4 left-4 px-3 py-1 text-[10px] font-body font-bold tracking-widest uppercase rounded-full text-white"
+                  [style.background]="region.badgeColor">
+                  {{ region.badge }}
+                </span>
+                <!-- Rating -->
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm">
+                  <svg class="w-3 h-3" viewBox="0 0 20 20" fill="#FFD700">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span class="text-white text-[11px] font-body font-semibold">{{ region.rating }}</span>
                 </div>
               </div>
+
+              <!-- Body -->
               <div class="p-6">
-                <p class="text-gray-600 text-sm mb-4">{{ region.description }}</p>
-                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition-colors duration-200">
-                  Explore {{ region.label }} →
-                </button>
+                <p class="text-[11px] text-gray-400 font-body tracking-widest uppercase mb-1.5">{{ region.locations }}</p>
+                <h3 class="font-display text-xl text-gray-900 font-semibold mb-1.5 leading-tight">{{ region.title }}</h3>
+
+                <!-- Meta -->
+                <div class="flex items-center gap-4 text-gray-400 text-xs font-body mb-4">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {{ region.duration }}
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {{ region.group }}
+                  </span>
+                </div>
+
+                <!-- Inclusions Chips -->
+                <div class="flex flex-wrap gap-1.5 mb-5">
+                  <span *ngFor="let inc of region.inclusions"
+                    class="px-2.5 py-1 rounded-full text-[10px] font-body font-medium bg-pista-50 text-pista-dark">{{ inc }}</span>
+                </div>
+
+                <!-- Price + CTA -->
+                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <div>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-wide font-body">Starting from</span>
+                    <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ region.price }}</p>
+                    <span class="text-[10px] text-gray-400 font-body">per person</span>
+                  </div>
+                  <a href="#" class="btn-pista">
+                    View Details
+                  </a>
+                </div>
               </div>
-            </article>
+            </div>
           </div>
         </section>
 
@@ -99,79 +149,6 @@ interface Region {
           </div>
         </section>
 
-        <!-- Featured International Deals -->
-        <section class="mb-20">
-          <div class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured International Packages</h2>
-            <p class="text-gray-600">Limited-time offers on popular international destinations</p>
-            <div class="h-1 w-20 bg-blue-600 rounded mt-4"></div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-blue-600 transition-all hover:shadow-xl">
-              <div class="bg-gradient-to-r from-blue-600 to-blue-500 p-8 text-white">
-                <h3 class="text-2xl font-bold mb-2">Europe Grand Tour</h3>
-                <p class="text-blue-100 mb-4">7N/8D: Paris → Amsterdam → Berlin → Vienna</p>
-                <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-bold">$1,899</span>
-                  <span class="text-blue-200 line-through">$2,499</span>
-                  <span class="bg-red-500 px-3 py-1 rounded-full text-sm font-bold">Save 24%</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <ul class="space-y-2 mb-6">
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-600 font-bold">✓</span>
-                    5-star accommodations
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-600 font-bold">✓</span>
-                    Guided city tours
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-600 font-bold">✓</span>
-                    Travel insurance included
-                  </li>
-                </ul>
-                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors">
-                  Book Now →
-                </button>
-              </div>
-            </div>
-
-            <div class="rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-blue-600 transition-all hover:shadow-xl">
-              <div class="bg-gradient-to-r from-indigo-600 to-purple-500 p-8 text-white">
-                <h3 class="text-2xl font-bold mb-2">Southeast Asia Adventure</h3>
-                <p class="text-indigo-100 mb-4">6N/7D: Bangkok → Chiang Mai → Phuket</p>
-                <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-bold">$799</span>
-                  <span class="text-indigo-200 line-through">$999</span>
-                  <span class="bg-red-500 px-3 py-1 rounded-full text-sm font-bold">Save 20%</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <ul class="space-y-2 mb-6">
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-600 font-bold">✓</span>
-                    Boutique hotels & resorts
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-600 font-bold">✓</span>
-                    Thai cooking class
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-600 font-bold">✓</span>
-                    Island hopping tour
-                  </li>
-                </ul>
-                <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-lg transition-colors">
-                  Book Now →
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <!-- CTA Section -->
         <section class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-12 text-center text-white">
           <h2 class="text-4xl font-bold mb-4">Ready for Your International Adventure?</h2>
@@ -195,40 +172,76 @@ interface Region {
 export class InternationalPage {
   regions: Region[] = [
     {
-      label: 'Southeast Asia',
-      count: 18,
-      image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&q=85',
-      description: 'Thailand, Vietnam, Indonesia, Cambodia, and more. Experience vibrant cultures, ancient temples, and pristine beaches.'
+      title: 'Southeast Asia Explorer',
+      locations: 'Thailand · Vietnam · Singapore',
+      duration: '12N / 13D',
+      group: 'All Groups',
+      price: '₹59,999',
+      img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&q=85',
+      badge: 'Best Seller',
+      badgeColor: '#FF6B6B',
+      rating: '4.9',
+      inclusions: ['Hotels', 'Breakfast', 'Guided Tours', 'Cooking Class', 'Transfers']
     },
     {
-      label: 'Europe',
-      count: 24,
-      image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=500&q=85',
-      description: 'From the Eiffel Tower to the Swiss Alps. Discover historic cities, charming countryside, and world-class cuisine.'
+      title: 'European Grand Tour',
+      locations: 'Paris · Rome · Barcelona',
+      duration: '14N / 15D',
+      group: 'All Groups',
+      price: '₹1,49,999',
+      img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=85',
+      badge: 'Premium',
+      badgeColor: '#1a1a1a',
+      rating: '5.0',
+      inclusions: ['Hotels', 'Breakfast', 'City Tours', 'Museum Passes', 'Transfers']
     },
     {
-      label: 'Middle East',
-      count: 10,
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=85',
-      description: 'Dubai, Abu Dhabi, Jordan, and beyond. Experience luxury, desert adventures, and Arabian hospitality.'
+      title: 'Middle East Marvel',
+      locations: 'Dubai · Abu Dhabi · Jordan',
+      duration: '8N / 9D',
+      group: 'All Groups',
+      price: '₹69,999',
+      img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=85',
+      badge: 'Luxury',
+      badgeColor: '#FFD700',
+      rating: '4.8',
+      inclusions: ['Hotels', 'Breakfast', 'Desert Safari', 'Petra Tour', 'Transfers']
     },
     {
-      label: 'Far East',
-      count: 12,
-      image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&q=85',
-      description: 'Japan, South Korea, China, and Mongolia. Discover ancient traditions blended with modern innovation.'
+      title: 'Far Eastern Wonders',
+      locations: 'Japan · South Korea · China',
+      duration: '15N / 16D',
+      group: 'Adventure',
+      price: '₹1,29,999',
+      img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&q=85',
+      badge: 'Cultural',
+      badgeColor: '#FF1744',
+      rating: '4.9',
+      inclusions: ['Hotels', 'All Meals', 'Guided Tours', 'Bullet Train', 'Transfers']
     },
     {
-      label: 'USA & Canada',
-      count: 8,
-      image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=500&q=85',
-      description: 'Natural wonders, bustling cities, and outdoor adventures. Explore diverse landscapes and experiences.'
+      title: 'North America Adventure',
+      locations: 'USA · Canada · Mexico',
+      duration: '10N / 11D',
+      group: 'All Groups',
+      price: '₹99,999',
+      img: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=500&q=85',
+      badge: 'Nature',
+      badgeColor: '#4A90E2',
+      rating: '4.7',
+      inclusions: ['Hotels', 'Breakfast', 'National Parks', 'City Tours', 'Transfers']
     },
     {
-      label: 'South America',
-      count: 6,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=85',
-      description: 'Peru, Brazil, Argentina, and Chile. Experience Amazon rainforests, Machu Picchu, and vibrant cultures.'
-    },
+      title: 'South America Explorer',
+      locations: 'Peru · Brazil · Argentina',
+      duration: '12N / 13D',
+      group: 'Adventure',
+      price: '₹1,09,999',
+      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=85',
+      badge: 'Adventure',
+      badgeColor: '#7AAD5C',
+      rating: '4.8',
+      inclusions: ['Hotels', 'Breakfast', 'Machu Picchu', 'Amazon Tour', 'Transfers']
+    }
   ];
 }

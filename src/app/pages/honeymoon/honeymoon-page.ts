@@ -2,11 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-interface HoneymoonDestination {
-  name: string;
-  nights: string;
-  image: string;
-  desc: string;
+interface HoneymoonPackage {
+  title: string;
+  locations: string;
+  duration: string;
+  group: string;
+  price: string;
+  img: string;
+  badge: string;
+  badgeColor: string;
+  rating: string;
+  inclusions: string[];
 }
 
 @Component({
@@ -34,70 +40,81 @@ interface HoneymoonDestination {
     <div class="bg-white py-20 px-6">
       <div class="max-w-6xl mx-auto">
 
-        <!-- Featured Honeymoon Destination -->
-        <section class="mb-20">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="relative">
-              <img [src]="honeymoonDestinations[0].image" [alt]="honeymoonDestinations[0].name"
-                class="rounded-2xl shadow-2xl w-full h-96 object-cover" />
-              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-red-100 rounded-full opacity-20"></div>
-            </div>
-            <div>
-              <span class="inline-flex items-center gap-1.5 bg-red-100 text-red-600 font-bold text-xs px-3 py-1 rounded-full mb-4">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-                MOST POPULAR
-              </span>
-              <h2 class="text-4xl font-bold text-gray-900 mb-4">{{ honeymoonDestinations[0].name }}</h2>
-              <p class="text-[#7AAD5C] font-semibold text-lg mb-4">{{ honeymoonDestinations[0].nights }}</p>
-              <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                {{ honeymoonDestinations[0].desc }}
-              </p>
-              <div class="flex gap-4">
-                <button class="bg-[#7AAD5C] hover:bg-[#5C8A3E] text-white font-bold px-8 py-3.5 rounded-lg transition-colors duration-200">
-                  View Itinerary →
-                </button>
-                <button class="border-2 border-[#7AAD5C] text-[#7AAD5C] hover:bg-[#7AAD5C] hover:text-white font-bold px-8 py-3.5 rounded-lg transition-all duration-200">
-                  Customize Trip
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- More Honeymoon Destinations -->
+        <!-- Honeymoon Packages -->
         <section class="mb-20">
           <div class="mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 mb-2">More Romantic Escapes</h2>
+            <h2 class="text-4xl font-bold text-gray-900 mb-2">Romantic Escapes</h2>
             <p class="text-gray-600 text-lg">
-              Discover other beautiful destinations perfect for celebrating love
+              Discover beautiful destinations perfect for celebrating love and creating magical moments
             </p>
             <div class="h-1 w-20 bg-red-500 rounded mt-4"></div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article *ngFor="let dest of honeymoonDestinations.slice(1)"
-              class="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-red-400 transition-all duration-300 hover:shadow-2xl">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+            <div *ngFor="let pkg of honeymoonPackages; let i = index" class="pkg-card" [style.animation-delay]="(i * 0.1) + 's'">
+              <!-- Image -->
               <div class="relative h-56 overflow-hidden">
-                <img [src]="dest.image" [alt]="dest.name"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                <div class="absolute top-4 left-4">
-                  <svg class="w-8 h-8 text-red-500 fill-current" viewBox="0 0 24 24">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                <img [src]="pkg.img" [alt]="pkg.title"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <!-- Badge -->
+                <span
+                  class="absolute top-4 left-4 px-3 py-1 text-[10px] font-body font-bold tracking-widest uppercase rounded-full text-white"
+                  [style.background]="pkg.badgeColor">
+                  {{ pkg.badge }}
+                </span>
+                <!-- Rating -->
+                <div
+                  class="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm">
+                  <svg class="w-3 h-3" viewBox="0 0 20 20" fill="#FFD700">
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
+                  <span class="text-white text-[11px] font-body font-semibold">{{ pkg.rating }}</span>
                 </div>
               </div>
+
+              <!-- Body -->
               <div class="p-6">
-                <h3 class="text-2xl font-bold text-gray-900 mb-1">{{ dest.name }}</h3>
-                <p class="text-[#7AAD5C] font-semibold text-sm mb-3">{{ dest.nights }}</p>
-                <p class="text-gray-600 text-sm mb-4">{{ dest.desc }}</p>
-                <button class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2.5 rounded-lg transition-colors duration-200">
-                  Explore →
-                </button>
+                <p class="text-[11px] text-gray-400 font-body tracking-widest uppercase mb-1.5">{{ pkg.locations }}</p>
+                <h3 class="font-display text-xl text-gray-900 font-semibold mb-1.5 leading-tight">{{ pkg.title }}</h3>
+
+                <!-- Meta -->
+                <div class="flex items-center gap-4 text-gray-400 text-xs font-body mb-4">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {{ pkg.duration }}
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {{ pkg.group }}
+                  </span>
+                </div>
+
+                <!-- Inclusions Chips -->
+                <div class="flex flex-wrap gap-1.5 mb-5">
+                  <span *ngFor="let inc of pkg.inclusions"
+                    class="px-2.5 py-1 rounded-full text-[10px] font-body font-medium bg-pista-50 text-pista-dark">{{ inc }}</span>
+                </div>
+
+                <!-- Price + CTA -->
+                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <div>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-wide font-body">Starting from</span>
+                    <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ pkg.price }}</p>
+                    <span class="text-[10px] text-gray-400 font-body">per couple</span>
+                  </div>
+                  <a href="#" class="btn-pista">
+                    View Details
+                  </a>
+                </div>
               </div>
-            </article>
+            </div>
           </div>
         </section>
 
@@ -150,36 +167,78 @@ interface HoneymoonDestination {
   `]
 })
 export class HoneymoonPage {
-  honeymoonDestinations: HoneymoonDestination[] = [
+  honeymoonPackages: HoneymoonPackage[] = [
     {
-      name: 'Maldives Honeymoon',
-      nights: '4N/5D',
-      image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=85',
-      desc: 'Crystal-clear waters, overwater bungalows, and pristine beaches combine to create the ultimate romantic paradise. Enjoy private dinners, snorkeling, and endless sunsets.'
+      title: 'Maldives Honeymoon',
+      locations: 'Male · Ari Atoll · Baa Atoll',
+      duration: '4N / 5D',
+      group: 'Couples',
+      price: '₹89,999',
+      img: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=85',
+      badge: 'Most Popular',
+      badgeColor: '#FF1744',
+      rating: '5.0',
+      inclusions: ['Overwater Bungalow', 'All Meals', 'Snorkeling', 'Spa', 'Sunset Cruise']
     },
     {
-      name: 'Bali Romance',
-      nights: '5N/6D',
-      image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=85',
-      desc: 'Lush rice terraces, ancient temples, and luxury resorts set the stage for romance. Experience couples spa treatments and beachfront dinners.'
+      title: 'Bali Romance',
+      locations: 'Denpasar · Ubud · Seminyak',
+      duration: '5N / 6D',
+      group: 'Couples',
+      price: '₹49,999',
+      img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=85',
+      badge: 'Romantic',
+      badgeColor: '#E91E63',
+      rating: '4.9',
+      inclusions: ['Resort Stay', 'Breakfast', 'Temple Tours', 'Couple Spa', 'Dinner Cruise']
     },
     {
-      name: 'Kashmir Dreams',
-      nights: '5N/6D',
-      image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=85',
-      desc: 'Stunning mountain landscapes and serene houseboats on Dal Lake create an enchanting backdrop. Perfect for peaceful getaways with scenic beauty.'
+      title: 'Kashmir Dreams',
+      locations: 'Srinagar · Pahalgam',
+      duration: '5N / 6D',
+      group: 'Couples',
+      price: '₹39,999',
+      img: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=85',
+      badge: 'Scenic',
+      badgeColor: '#8B4513',
+      rating: '4.8',
+      inclusions: ['Houseboat', 'Breakfast', 'Dal Lake Cruise', 'Gondola Ride', 'Picnic']
     },
     {
-      name: 'Europe Escapes',
-      nights: '7N/8D',
-      image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=500&q=85',
-      desc: 'Romantic cities, charming towns, and world-class cuisine await. From Paris to Venice, experience timeless European romance.'
+      title: 'Europe Romance',
+      locations: 'Paris · Venice · Vienna',
+      duration: '7N / 8D',
+      group: 'Couples',
+      price: '₹1,29,999',
+      img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=500&q=85',
+      badge: 'Premium',
+      badgeColor: '#1a1a1a',
+      rating: '5.0',
+      inclusions: ['5-Star Hotels', 'Breakfast', 'City Tours', 'Gondola Rides', 'Wine Tasting']
     },
     {
-      name: 'Kerala Backwaters',
-      nights: '3N/4D',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=85',
-      desc: 'Peaceful houseboats gliding through backwaters surrounded by lush greenery. A perfect retreat for couples seeking tranquility.'
+      title: 'Kerala Backwaters',
+      locations: 'Kochi · Alleppey · Kumarakom',
+      duration: '3N / 4D',
+      group: 'Couples',
+      price: '₹24,999',
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=85',
+      badge: 'Tranquil',
+      badgeColor: '#7AAD5C',
+      rating: '4.7',
+      inclusions: ['Houseboat', 'Meals', 'Backwater Tour', 'Ayurveda Spa', 'Beach Time']
     },
+    {
+      title: 'Seychelles Paradise',
+      locations: 'Male · Praslin · La Digue',
+      duration: '5N / 6D',
+      group: 'Couples',
+      price: '₹99,999',
+      img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=85',
+      badge: 'Exotic',
+      badgeColor: '#00BCD4',
+      rating: '4.9',
+      inclusions: ['Island Resort', 'All Meals', 'Beach Activities', 'Snorkeling', 'Sunset Sail']
+    }
   ];
 }
