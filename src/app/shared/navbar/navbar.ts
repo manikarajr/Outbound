@@ -39,21 +39,21 @@ export class Navbar implements OnDestroy {
 
   // ── Destinations ──────────────────────────────────────────────────
   domestic = [
-    { name: 'Kashmir', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=120&q=80' },
-    { name: 'Andaman', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=120&q=80' },
-    { name: 'Kerala', nights: '3N/4D', thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&q=80' },
-    { name: 'Himachal', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&q=80' },
-    { name: 'Goa', nights: '3N/4D', thumb: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=120&q=80' },
-    { name: 'Rajasthan', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=120&q=80' },
+    { id: '1', name: 'Kashmir', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=120&q=80' },
+    { id: '2', name: 'Andaman', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=120&q=80' },
+    { id: '3', name: 'Kerala', nights: '3N/4D', thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&q=80' },
+    { id: '4', name: 'Himachal', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&q=80' },
+    { id: '5', name: 'Goa', nights: '3N/4D', thumb: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=120&q=80' },
+    { id: '6', name: 'Rajasthan', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=120&q=80' },
   ];
 
   international = [
-    { name: 'Maldives', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=120&q=80' },
-    { name: 'Bali', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=120&q=80' },
-    { name: 'Thailand', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=120&q=80' },
-    { name: 'Vietnam', nights: '6N/7D', thumb: 'https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=120&q=80' },
-    { name: 'Dubai', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=120&q=80' },
-    { name: 'Singapore', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=120&q=80' },
+    { id: '1', name: 'Maldives', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=120&q=80' },
+    { id: '2', name: 'Bali', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=120&q=80' },
+    { id: '3', name: 'Thailand', nights: '5N/6D', thumb: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=120&q=80' },
+    { id: '4', name: 'Vietnam', nights: '6N/7D', thumb: 'https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=120&q=80' },
+    { id: '5', name: 'Dubai', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=120&q=80' },
+    { id: '6', name: 'Singapore', nights: '4N/5D', thumb: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=120&q=80' },
   ];
 
   travelStyles = [
@@ -76,11 +76,11 @@ export class Navbar implements OnDestroy {
 
   // ── Honeymoon ──────────────────────────────────────────────────────
   honeymoonDestinations = [
-    { label: 'Maldives Honeymoon', nights: '4N/5D', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=85' },
-    { label: 'Bali Romance', nights: '5N/6D', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=85' },
-    { label: 'Kashmir Dreams', nights: '5N/6D', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&q=85' },
-    { label: 'Europe Escapes', nights: '7N/8D', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=85' },
-    { label: 'Kerala Backwaters', nights: '3N/4D', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=85' },
+    { id: '1', label: 'Maldives Honeymoon', nights: '4N/5D', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=85' },
+    { id: '2', label: 'Bali Romance', nights: '5N/6D', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=85' },
+    { id: '3', label: 'Kashmir Dreams', nights: '5N/6D', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&q=85' },
+    { id: '4', label: 'Europe Escapes', nights: '7N/8D', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=85' },
+    { id: '5', label: 'Kerala Backwaters', nights: '3N/4D', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=85' },
   ];
 
   // ── International Regions ──────────────────────────────────────────

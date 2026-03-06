@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import internationalData from '../../data/international.json';
 
 @Component({
   selector: 'app-international-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
     <section class="bg-gradient-to-b from-blue-600 to-[#7AAD5C] text-white py-28 px-6">
@@ -91,7 +92,7 @@ import internationalData from '../../data/international.json';
                     <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ region.price }}</p>
                     <span class="text-[10px] text-gray-400 font-body">per person</span>
                   </div>
-                  <a href="#" class="btn-pista">
+                  <a [routerLink]="['/package-detail', 'international', region.id]" class="btn-pista">
                     View Details
                   </a>
                 </div>

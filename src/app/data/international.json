@@ -11,7 +11,30 @@
       "badge": "Best Seller",
       "badgeColor": "#FF6B6B",
       "rating": "4.9",
-      "inclusions": ["Hotels", "Breakfast", "Guided Tours", "Cooking Class", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Guided Tours", "Cooking Class", "Transfers"],
+      "overview": "Three iconic Southeast Asian nations in one unforgettable journey. From Bangkok's glittering temples and Chiang Mai's hill tribes to Hanoi's charming Old Quarter, Halong Bay's UNESCO waters, and Singapore's futuristic cityscape — a trip that perfectly blends culture, cuisine, and adventure.",
+      "highlights": [
+        "Halong Bay overnight cruise through emerald limestone karsts",
+        "Authentic Thai cooking class in Chiang Mai",
+        "Gardens by the Bay & Singapore's night skyline",
+        "Mekong Delta boat tour through floating markets",
+        "Bangkok's Grand Palace & Wat Pho"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Bangkok", "activities": ["Airport arrival & hotel check-in", "Khao San Road evening exploration", "Welcome dinner at a riverside Thai restaurant"] },
+        { "day": 2, "title": "Bangkok Temples", "activities": ["Grand Palace & Emerald Buddha", "Wat Pho Reclining Buddha", "Chao Phraya river boat cruise"] },
+        { "day": 3, "title": "Chiang Mai", "activities": ["Morning flight to Chiang Mai", "Elephant sanctuary (ethical) half-day", "Night Bazaar street food & shopping"] },
+        { "day": 4, "title": "Chiang Mai Culture", "activities": ["Thai cooking class with local chef", "Doi Inthanon National Park", "Old City temples walk"] },
+        { "day": 5, "title": "Fly to Hanoi", "activities": ["Flight to Hanoi, Vietnam", "Hoan Kiem Lake & Old Quarter walking tour", "Street food evening: pho & banh mi"] },
+        { "day": 6, "title": "Halong Bay Cruise", "activities": ["Drive to Halong Bay, board overnight cruise", "Sung Sot Cave exploration", "Kayaking through limestone formations"] },
+        { "day": 7, "title": "Halong & Return Hanoi", "activities": ["Sunrise on deck & swimming", "Return to Hanoi", "Afternoon free in Old Quarter"] },
+        { "day": 8, "title": "Hanoi to Ho Chi Minh", "activities": ["Hoan Kiem stroll & Temple of Literature", "Flight to Ho Chi Minh City", "Ben Thanh Night Market"] },
+        { "day": 9, "title": "Mekong Delta", "activities": ["Full-day Mekong Delta boat tour", "Floating market & village life", "Homestay lunch with local family"] },
+        { "day": 10, "title": "Fly to Singapore", "activities": ["Flight to Singapore", "Marina Bay Sands observation deck", "Gardens by the Bay & Cloud Forest"] },
+        { "day": 11, "title": "Singapore Highlights", "activities": ["Sentosa Island & Universal Studios", "S.E.A. Aquarium", "Clarke Quay dinner by the river"] },
+        { "day": 12, "title": "Singapore Free Day", "activities": ["Orchard Road shopping", "Chinatown & Little India", "Farewell dinner at rooftop restaurant"] },
+        { "day": 13, "title": "Departure", "activities": ["Hotel checkout", "Transfer to Changi Airport", "International departure"] }
+      ]
     },
     {
       "id": "2",
@@ -24,7 +47,32 @@
       "badge": "Premium",
       "badgeColor": "#1a1a1a",
       "rating": "5.0",
-      "inclusions": ["Hotels", "Breakfast", "City Tours", "Museum Passes", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "City Tours", "Museum Passes", "Transfers"],
+      "overview": "Discover the grandeur of Europe's three most iconic cities across 15 days. The romance of Paris, the ancient glory of Rome, and the vibrant energy of Barcelona come together in this premium tour that lets you truly absorb each city's unique soul — without ever feeling rushed.",
+      "highlights": [
+        "Skip-the-line Louvre Museum & Eiffel Tower access",
+        "Private guided Vatican Museums & Sistine Chapel tour",
+        "Sagrada Família & Park Güell in Barcelona",
+        "Tuscany countryside wine tasting day trip",
+        "Scenic Eurail train through the Alps"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Paris", "activities": ["Arrival & luxury hotel check-in", "Seine River twilight cruise", "Dinner at a classic Parisian bistro"] },
+        { "day": 2, "title": "Paris Icons", "activities": ["Eiffel Tower (skip-the-line)", "Louvre Museum highlights", "Champs-Élysées & Arc de Triomphe"] },
+        { "day": 3, "title": "Paris Art & Montmartre", "activities": ["Musée d'Orsay", "Montmartre & Sacré-Cœur", "Le Marais evening stroll"] },
+        { "day": 4, "title": "Versailles Day Trip", "activities": ["Palace & Hall of Mirrors", "Royal Gardens walk", "Return to Paris"] },
+        { "day": 5, "title": "Paris to Rome", "activities": ["Free morning in Paris", "High-speed train to Rome", "Trastevere evening exploration"] },
+        { "day": 6, "title": "Rome Ancient Wonders", "activities": ["Colosseum & Roman Forum (guided)", "Palatine Hill", "Piazza Navona & Pantheon"] },
+        { "day": 7, "title": "Vatican Tour", "activities": ["Vatican Museums & Sistine Chapel (private)", "St. Peter's Basilica", "Gelato trail in old city"] },
+        { "day": 8, "title": "Tuscany Day Trip", "activities": ["Siena & medieval town walk", "Chianti wine tasting at a vineyard", "Return to Rome"] },
+        { "day": 9, "title": "Rome to Barcelona", "activities": ["Spanish Steps & Trevi Fountain", "Flight to Barcelona", "La Barceloneta beach evening"] },
+        { "day": 10, "title": "Barcelona Gaudí", "activities": ["Sagrada Família (skip-the-line)", "Park Güell panoramic views", "Gothic Quarter evening stroll"] },
+        { "day": 11, "title": "Barcelona Culture", "activities": ["Picasso Museum", "El Born neighborhood tapas tour", "Flamenco show"] },
+        { "day": 12, "title": "Costa Brava Day Trip", "activities": ["Costa Brava coastline excursion", "Dalí Theatre-Museum in Figueres", "Seafood dinner back in Barcelona"] },
+        { "day": 13, "title": "Barcelona Leisure", "activities": ["Montjuïc cable car & castle", "MNAC Art Museum", "Farewell rooftop dinner"] },
+        { "day": 14, "title": "Barcelona Free", "activities": ["Barceloneta beach morning", "Mercat de la Boqueria", "Evening at leisure"] },
+        { "day": 15, "title": "Departure", "activities": ["Hotel checkout", "Transfer to El Prat Airport", "International departure"] }
+      ]
     },
     {
       "id": "3",
@@ -37,7 +85,26 @@
       "badge": "Luxury",
       "badgeColor": "#FFD700",
       "rating": "4.8",
-      "inclusions": ["Hotels", "Breakfast", "Desert Safari", "Petra Tour", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Desert Safari", "Petra Tour", "Transfers"],
+      "overview": "From Dubai's record-breaking skyscrapers and Abu Dhabi's golden mosques to Jordan's ancient rose-red city of Petra and the serene Dead Sea, this 9-day Middle East marvel tours a region that effortlessly blends ancient history with futuristic opulence. A journey of genuine wonder.",
+      "highlights": [
+        "Burj Khalifa At the Top observation deck",
+        "Sheikh Zayed Grand Mosque in Abu Dhabi",
+        "Petra by Night — Treasury lit by candlelight",
+        "Wadi Rum desert jeep safari & Bedouin camp",
+        "Float in the Dead Sea"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Dubai", "activities": ["Airport arrival & hotel check-in", "Dubai Marina evening walk", "Dinner at a rooftop restaurant"] },
+        { "day": 2, "title": "Dubai Highlights", "activities": ["Burj Khalifa 'At the Top' observation deck", "Dubai Mall & Dubai Fountain show", "Deira Spice & Gold Souks"] },
+        { "day": 3, "title": "Desert Safari", "activities": ["Dune bashing in the Red Dunes", "Camel riding & sandboarding", "Bedouin camp dinner with belly dance"] },
+        { "day": 4, "title": "Abu Dhabi", "activities": ["Sheikh Zayed Grand Mosque (stunning architecture)", "Yas Island & Ferrari World visit", "Louvre Abu Dhabi museum"] },
+        { "day": 5, "title": "Fly to Amman, Jordan", "activities": ["Morning flight to Amman", "Amman Citadel & Roman Amphitheatre", "Rainbow Street evening & local meze dinner"] },
+        { "day": 6, "title": "Petra – Rose City", "activities": ["Full-day Petra UNESCO site", "The Siq canyon walk to the Treasury", "Petra by Night — candlelight Treasury experience"] },
+        { "day": 7, "title": "Wadi Rum Desert", "activities": ["Drive to Wadi Rum protected area", "4×4 jeep safari through red desert", "Overnight in Bedouin luxury camp under stars"] },
+        { "day": 8, "title": "Dead Sea", "activities": ["Drive to Dead Sea", "Float in the mineral-rich Dead Sea", "Mud bath & spa treatment at resort"] },
+        { "day": 9, "title": "Departure from Amman", "activities": ["Return to Amman", "Last-minute souvenirs at souk", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "4",
@@ -50,7 +117,33 @@
       "badge": "Cultural",
       "badgeColor": "#FF1744",
       "rating": "4.9",
-      "inclusions": ["Hotels", "All Meals", "Guided Tours", "Bullet Train", "Transfers"]
+      "inclusions": ["Hotels", "All Meals", "Guided Tours", "Bullet Train", "Transfers"],
+      "overview": "The Far East is a world unto itself — ancient traditions meeting cutting-edge modernity. Experience Japan's cherry blossoms and Shinkansen bullet trains, Seoul's K-culture and street food markets, and Beijing's imperial grandeur with the Great Wall on the horizon. A 16-day cultural odyssey like no other.",
+      "highlights": [
+        "Mount Fuji panorama from Hakone",
+        "Shinkansen bullet train through the Japanese countryside",
+        "Great Wall of China at Mutianyu section",
+        "Seoul's Gyeongbokgung Palace in hanbok attire",
+        "Kyoto's Arashiyama bamboo grove at dawn"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Tokyo", "activities": ["International arrival & hotel check-in", "Asakusa Senso-ji temple & Nakamise shopping", "Shibuya Crossing & Shinjuku night lights"] },
+        { "day": 2, "title": "Tokyo Modern", "activities": ["teamLab Borderless digital art museum", "Akihabara tech & anime district", "Odaiba waterfront evening"] },
+        { "day": 3, "title": "Tokyo to Kyoto (Shinkansen)", "activities": ["Bullet train to Kyoto", "Arashiyama bamboo grove (early morning)", "Tenryu-ji Zen garden"] },
+        { "day": 4, "title": "Kyoto Temples", "activities": ["Fushimi Inari Shrine (10,000 torii gates)", "Kinkaku-ji Golden Pavilion", "Gion geisha district evening stroll"] },
+        { "day": 5, "title": "Nara Day Trip", "activities": ["Nara's friendly deer park & Todai-ji temple", "Traditional kaiseki lunch", "Return to Kyoto"] },
+        { "day": 6, "title": "Hakone – Mount Fuji", "activities": ["Scenic train to Hakone", "Mount Fuji panorama views", "Onsen (hot spring) bath experience"] },
+        { "day": 7, "title": "Return Tokyo & Fly Seoul", "activities": ["Return to Tokyo", "Morning flight to Seoul, South Korea", "Insadong cultural district evening"] },
+        { "day": 8, "title": "Seoul Royal Culture", "activities": ["Gyeongbokgung Palace in traditional hanbok", "Bukchon Hanok Village", "K-pop district & SMTOWN visit"] },
+        { "day": 9, "title": "Seoul Food & DMZ", "activities": ["DMZ (Korean Demilitarized Zone) tour", "Gwangjang Market street food tasting", "Dongdaemun night market"] },
+        { "day": 10, "title": "Fly to Beijing", "activities": ["Morning flight to Beijing, China", "Tiananmen Square & Forbidden City", "Sanlitun evening"] },
+        { "day": 11, "title": "Great Wall of China", "activities": ["Mutianyu Great Wall full-day", "Cable car ride up & toboggan descent", "Hot pot dinner in Beijing"] },
+        { "day": 12, "title": "Beijing Imperial Tour", "activities": ["Temple of Heaven morning ceremony", "Summer Palace & Kunming Lake", "Peking duck dinner at a classic restaurant"] },
+        { "day": 13, "title": "Beijing to Shanghai", "activities": ["High-speed train to Shanghai", "The Bund riverside promenade", "Nanjing Road shopping & neon lights"] },
+        { "day": 14, "title": "Shanghai Modern City", "activities": ["Shanghai Tower observation deck (world's 2nd tallest)", "Yu Garden & Old Town", "Xintiandi rooftop bar farewell drinks"] },
+        { "day": 15, "title": "Free Day Shanghai", "activities": ["Zhujiajiao water village day trip", "Jade Buddha Temple", "Farewell dinner at restaurant with Pudong views"] },
+        { "day": 16, "title": "Departure", "activities": ["Hotel checkout", "Transfer to Pudong International Airport", "International departure"] }
+      ]
     },
     {
       "id": "5",
@@ -63,7 +156,28 @@
       "badge": "Nature",
       "badgeColor": "#4A90E2",
       "rating": "4.7",
-      "inclusions": ["Hotels", "Breakfast", "National Parks", "City Tours", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "National Parks", "City Tours", "Transfers"],
+      "overview": "Three incredible North American nations — each with its own dramatic identity. From New York's iconic skyline and Niagara Falls to Canada's Rocky Mountain lakes and Mexico's ancient Mayan ruins by the Caribbean Sea, this 11-day adventure showcases the vast, thrilling diversity of the North American continent.",
+      "highlights": [
+        "Niagara Falls boat ride (Maid of the Mist)",
+        "Banff National Park & Lake Louise turquoise waters",
+        "Chichen Itza Mayan pyramid — a UNESCO Wonder",
+        "New York City: Statue of Liberty & Times Square",
+        "Tulum cliff-side ruins above the Caribbean"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive New York City", "activities": ["JFK airport arrival & Manhattan hotel check-in", "Times Square & Broadway district evening", "Dinner at a classic NYC steakhouse"] },
+        { "day": 2, "title": "New York Icons", "activities": ["Statue of Liberty & Ellis Island ferry", "Brooklyn Bridge walk", "Central Park & The Met Museum"] },
+        { "day": 3, "title": "NYC to Niagara", "activities": ["Morning Empire State Building", "Bus to Niagara Falls", "Maid of the Mist boat experience & Niagara lights"] },
+        { "day": 4, "title": "Fly to Calgary, Canada", "activities": ["Flight to Calgary", "Drive to Banff National Park", "Bow River evening walk"] },
+        { "day": 5, "title": "Banff & Rockies", "activities": ["Lake Louise turquoise waters", "Moraine Lake photo stop", "Banff Upper Hot Springs soak"] },
+        { "day": 6, "title": "Icefields Parkway", "activities": ["Columbia Icefield & Athabasca Glacier walk", "Peyto Lake viewpoint", "Jasper National Park evening"] },
+        { "day": 7, "title": "Fly to Cancun, Mexico", "activities": ["Flight to Cancun", "Hotel Zone beach check-in", "Cancun strip evening & seafood dinner"] },
+        { "day": 8, "title": "Chichen Itza", "activities": ["Full-day Chichen Itza UNESCO site", "El Castillo pyramid & cenote swim", "Valladolid colonial town lunch"] },
+        { "day": 9, "title": "Tulum", "activities": ["Tulum Mayan ruins above the Caribbean sea", "Cenote Dos Ojos snorkeling", "Tulum beach yoga & sunset"] },
+        { "day": 10, "title": "Cancun Leisure", "activities": ["Morning water sports: parasailing & jet ski", "Isla Mujeres day trip by ferry", "Farewell Mexican fiesta dinner"] },
+        { "day": 11, "title": "Departure", "activities": ["Hotel checkout", "Transfer to Cancun International Airport", "International departure"] }
+      ]
     },
     {
       "id": "6",
@@ -76,7 +190,30 @@
       "badge": "Adventure",
       "badgeColor": "#7AAD5C",
       "rating": "4.8",
-      "inclusions": ["Hotels", "Breakfast", "Machu Picchu", "Amazon Tour", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Machu Picchu", "Amazon Tour", "Transfers"],
+      "overview": "South America is the continent of superlatives — the highest Incan citadel, the world's largest rainforest, and the thundering falls that dwarf Niagara. This 13-day explorer spans Peru's ancient Incan empire, the Amazon's wild heart in Brazil, and Argentina's tango-fuelled Buenos Aires. Adventure in its purest form.",
+      "highlights": [
+        "Machu Picchu sunrise — the iconic lost city of the Incas",
+        "Amazon River boat journey deep into the rainforest",
+        "Iguazu Falls — the world's most powerful waterfall system",
+        "Sacred Valley Incan ruins & local market",
+        "Buenos Aires tango show & steak dinner"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Lima, Peru", "activities": ["International arrival & hotel check-in", "Miraflores cliff walk & Pacific Ocean sunset", "Ceviche dinner in the city's food district"] },
+        { "day": 2, "title": "Lima & Fly to Cusco", "activities": ["Larco Museum (pre-Columbian artifacts)", "Flight to Cusco (acclimatization day)", "Cusco Plaza de Armas evening walk"] },
+        { "day": 3, "title": "Sacred Valley", "activities": ["Pisac Incan ruins & local market", "Ollantaytambo fortress tour", "Train to Aguas Calientes"] },
+        { "day": 4, "title": "Machu Picchu", "activities": ["Sunrise entry to Machu Picchu (UNESCO)", "Guided 2-hour tour of the citadel", "Optional Inca Sun Gate hike, return to Cusco"] },
+        { "day": 5, "title": "Cusco City", "activities": ["Sacsayhuamán Incan fortress", "Qorikancha (Temple of the Sun)", "Cusco artisan market & free evening"] },
+        { "day": 6, "title": "Fly to Manaus, Brazil", "activities": ["Flight to Manaus via Lima", "Amazon River arrival & lodge check-in", "Sunset canoe on the Amazon's tributaries"] },
+        { "day": 7, "title": "Amazon Rainforest", "activities": ["Jungle trekking with naturalist guide", "River dolphin spotting boat ride", "Night wildlife walk"] },
+        { "day": 8, "title": "Meeting of the Waters", "activities": ["Boat tour to the Meeting of Rio Negro & Amazon", "Local village visit & community interaction", "Piranha fishing experience"] },
+        { "day": 9, "title": "Fly to Foz do Iguaçu", "activities": ["Flight to Iguaçu Falls", "Brazilian side full-day: panoramic walkways", "Macuco Safari boat ride into the falls spray"] },
+        { "day": 10, "title": "Argentina Side – Iguaçu", "activities": ["Argentine side: Devil's Throat catwalk", "Bird Park (over 1,400 species)", "Evening flight to Buenos Aires"] },
+        { "day": 11, "title": "Buenos Aires", "activities": ["La Boca neighborhood & colorful Caminito", "San Telmo antique market & tango street show", "Parrilla steak dinner & Milonga tango show"] },
+        { "day": 12, "title": "Buenos Aires Leisure", "activities": ["Recoleta Cemetery (Eva Perón's tomb)", "Puerto Madero waterfront", "Farewell dinner at rooftop restaurant"] },
+        { "day": 13, "title": "Departure", "activities": ["Hotel checkout", "Transfer to Ministro Pistarini Airport", "International departure"] }
+      ]
     }
   ]
 }

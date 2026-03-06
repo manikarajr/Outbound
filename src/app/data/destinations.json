@@ -11,7 +11,23 @@
       "badge": "Scenic",
       "badgeColor": "#7AAD5C",
       "rating": "4.9",
-      "inclusions": ["Hotels", "Breakfast", "Transfers", "Houseboat", "Guide"]
+      "inclusions": ["Hotels", "Breakfast", "Transfers", "Houseboat", "Guide"],
+      "overview": "Kashmir — the crown jewel of India. Drift on Dal Lake in a shikara, stay in a luxury houseboat, walk through meadows of wildflowers in Pahalgam, and ride the gondola to snow-capped peaks at Gulmarg. This 6-day retreat is a celebration of nature's finest canvas.",
+      "highlights": [
+        "Luxury houseboat stay on Dal Lake",
+        "Gulmarg Gondola to Kongdori — Himalayan panoramas",
+        "Betaab Valley picnic in Pahalgam",
+        "Mughal gardens: Shalimar Bagh & Nishat Bagh",
+        "Shikara sunrise ride on Dal Lake"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Srinagar", "activities": ["Airport pickup & houseboat check-in on Dal Lake", "Evening shikara ride at sunset", "Wazwan dinner on houseboat deck"] },
+        { "day": 2, "title": "Srinagar Sights", "activities": ["Shikara morning market tour", "Shalimar Bagh & Nishat Bagh Mughal Gardens", "Shankaracharya Temple hilltop view"] },
+        { "day": 3, "title": "Gulmarg", "activities": ["Drive to Gulmarg meadows", "Gondola ride to Kongdori (phase 1 & 2)", "Snow activities & yak ride"] },
+        { "day": 4, "title": "Pahalgam", "activities": ["Drive to Pahalgam along Lidder River", "Betaab Valley & Chandanwari picnic", "Aru Valley horse ride"] },
+        { "day": 5, "title": "Pahalgam Leisure", "activities": ["Baisaran meadow walk", "Lidder River trout fishing", "Bonfire evening & folk music"] },
+        { "day": 6, "title": "Departure", "activities": ["Return drive to Srinagar", "Last shikara ride & souvenir shopping", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "2",
@@ -24,7 +40,22 @@
       "badge": "Beach",
       "badgeColor": "#4A90E2",
       "rating": "4.8",
-      "inclusions": ["Hotels", "Breakfast", "Island Tours", "Water Sports", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Island Tours", "Water Sports", "Transfers"],
+      "overview": "The Andaman Islands are India's most pristine tropical escape — powder-white beaches, electric-blue waters, and coral reefs teeming with exotic marine life. Hop between islands to discover secluded coves, snorkel with sea turtles, and dive into history at the colonial Cellular Jail.",
+      "highlights": [
+        "Radhanagar Beach — rated Asia's best beach",
+        "Snorkeling at Elephant Beach, Havelock",
+        "Glass-bottom boat reef tour",
+        "Cellular Jail light & sound show",
+        "Sea walk on the ocean floor"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Port Blair", "activities": ["Airport pickup & hotel check-in", "Cellular Jail historical tour", "Cellular Jail light & sound show evening"] },
+        { "day": 2, "title": "Port Blair to Havelock", "activities": ["Ferry to Havelock Island", "Radhanagar Beach — Asia's best beach", "Water sports: snorkeling & kayaking"] },
+        { "day": 3, "title": "Havelock Marine Life", "activities": ["Elephant Beach snorkeling trip", "Glass-bottom boat to coral reefs", "Sea walk experience on ocean floor"] },
+        { "day": 4, "title": "Neil Island", "activities": ["Ferry to Neil Island", "Natural Bridge geological formation", "Laxmanpur Beach sunset & fresh seafood"] },
+        { "day": 5, "title": "Return & Departure", "activities": ["Ferry back to Port Blair", "Samudrika Museum visit", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "3",
@@ -37,7 +68,21 @@
       "badge": "Serene",
       "badgeColor": "#7AAD5C",
       "rating": "4.7",
-      "inclusions": ["Hotels", "Breakfast", "Houseboat", "Backwater Tour", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Houseboat", "Backwater Tour", "Transfers"],
+      "overview": "Kerala's backwaters are a world apart — a serene network of palm-fringed canals, mirror-still lakes, and lush paddy fields. Drift through this tranquil paradise on a traditional houseboat, spot kingfishers skimming the water, and let the gentle rhythm of Kerala wash away all your worries.",
+      "highlights": [
+        "Houseboat cruise on Vembanad Lake",
+        "Kathakali classical dance performance in Kochi",
+        "Chinese fishing nets at Fort Kochi sunrise",
+        "Kumarakom Bird Sanctuary walk",
+        "Ayurveda massage at a lakeside spa"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Kochi", "activities": ["Airport pickup & boutique hotel check-in", "Fort Kochi: Chinese fishing nets & Dutch Palace", "Kathakali dance performance & dinner"] },
+        { "day": 2, "title": "Alleppey Houseboat", "activities": ["Drive to Alleppey & board luxury houseboat", "Backwater cruise through village life", "Overnight stay with fresh Kerala meals"] },
+        { "day": 3, "title": "Kumarakom", "activities": ["Morning bird sanctuary walk", "Kumarakom village boat tour", "Ayurveda treatment at resort spa"] },
+        { "day": 4, "title": "Departure", "activities": ["Leisurely morning on the lake", "Drive to Kochi airport", "Departure"] }
+      ]
     },
     {
       "id": "4",
@@ -50,7 +95,23 @@
       "badge": "Peak",
       "badgeColor": "#8B4513",
       "rating": "4.9",
-      "inclusions": ["Hotels", "Breakfast", "Treks", "Adventure Sports", "Guide"]
+      "inclusions": ["Hotels", "Breakfast", "Treks", "Adventure Sports", "Guide"],
+      "overview": "The Himachal highlands are a playground for adventure lovers — towering snow-capped peaks, lush pine forests, and adrenaline-pumping activities around every turn. From Shimla's colonial charm to Manali's glaciers and Dalhousie's misty hills, this 6-day mountain journey rejuvenates mind, body, and soul.",
+      "highlights": [
+        "Rohtang Pass snow fields near Manali",
+        "Solang Valley: skiing, zorbing & cable car",
+        "Shimla's colonial Mall Road & Ridge",
+        "Dalhousie's Khajjiar — India's mini Switzerland",
+        "River rafting on the Beas River"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Shimla", "activities": ["Arrive by Kalka-Shimla toy train", "Mall Road & The Ridge evening walk", "Local Himachali dinner"] },
+        { "day": 2, "title": "Shimla to Manali", "activities": ["Drive to Manali via Kullu Valley", "Hadimba Devi Temple in Manali", "Old Manali bazaar evening"] },
+        { "day": 3, "title": "Rohtang & Solang Valley", "activities": ["Rohtang Pass snow excursion", "Solang Valley: zorbing & cable car", "River rafting on Beas River"] },
+        { "day": 4, "title": "Manali to Dalhousie", "activities": ["Scenic drive through Himachal hills", "Dalhousie hotel check-in", "Gandhi Chowk evening & local food"] },
+        { "day": 5, "title": "Khajjiar", "activities": ["Khajjiar meadow (mini Switzerland)", "St. Francis Church & Subhash Baoli", "Panchpula waterfall trek"] },
+        { "day": 6, "title": "Departure", "activities": ["Drive to Pathankot / Kangra airport", "Flight to home city", "Departure with mountain memories"] }
+      ]
     },
     {
       "id": "5",
@@ -63,7 +124,21 @@
       "badge": "Beach",
       "badgeColor": "#FF6B6B",
       "rating": "4.6",
-      "inclusions": ["Resorts", "Breakfast", "Beach Tour", "Water Sports", "Transfers"]
+      "inclusions": ["Resorts", "Breakfast", "Beach Tour", "Water Sports", "Transfers"],
+      "overview": "Goa — India's beach paradise where golden sands meet vibrant nightlife, Portuguese heritage, and phenomenal seafood. Whether you're chasing adventure with water sports, exploring spice plantations, or simply lounging by the sea with a drink in hand, Goa never disappoints.",
+      "highlights": [
+        "Parasailing & jet-ski at Calangute Beach",
+        "Old Goa's Basilica of Bom Jesus (UNESCO)",
+        "Spice plantation tour & Goan lunch",
+        "Sunset cruise on the Mandovi River",
+        "Dudhsagar Waterfall trek"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Goa", "activities": ["Airport pickup & beach resort check-in", "Calangute / Baga beach afternoon", "Shacks dinner & beach music"] },
+        { "day": 2, "title": "North Goa Action", "activities": ["Water sports: parasailing, jet-ski, banana boat", "Anjuna Flea Market visit", "Sunset cruise on Mandovi River"] },
+        { "day": 3, "title": "Heritage & Nature", "activities": ["Old Goa churches: Basilica of Bom Jesus", "Spice plantation tour & traditional Goan lunch", "Palolem Beach, South Goa, sunset"] },
+        { "day": 4, "title": "Departure", "activities": ["Last beach stroll & souvenirs", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "6",
@@ -76,7 +151,22 @@
       "badge": "Heritage",
       "badgeColor": "#C27A40",
       "rating": "4.8",
-      "inclusions": ["Hotels", "Breakfast", "Forts Tour", "Desert Safari", "Guide"]
+      "inclusions": ["Hotels", "Breakfast", "Forts Tour", "Desert Safari", "Guide"],
+      "overview": "Rajasthan is India's most spectacular state — a land of mighty forts, ornate palaces, and the vast Thar Desert. Journey through the Pink City of Jaipur, the Golden City of Jaisalmer, and the City of Lakes, Udaipur. Every corner tells a story of royal splendour and timeless tradition.",
+      "highlights": [
+        "Amber Fort — a Rajput masterpiece",
+        "Camel safari at Sam Sand Dunes, Jaisalmer",
+        "Lake Pichola boat ride at sunset, Udaipur",
+        "Hawa Mahal & Johari Bazaar shopping",
+        "Traditional Rajasthani folk dinner with puppetry"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Jaipur", "activities": ["Airport pickup & hotel check-in", "Hawa Mahal & Johari Bazaar", "Rajasthani folk dinner & puppet show"] },
+        { "day": 2, "title": "Jaipur Pink City", "activities": ["Amber Fort with jeep ride", "Jal Mahal photo stop & City Palace", "Jantar Mantar observatory"] },
+        { "day": 3, "title": "Drive to Jaisalmer", "activities": ["Scenic drive through Thar Desert", "Jaisalmer Fort & Havelis", "Sunset at Gadisar Lake"] },
+        { "day": 4, "title": "Desert Safari", "activities": ["Sam Sand Dunes camel safari", "Rajasthani folk music at desert camp", "Overnight at desert camp (optional)"] },
+        { "day": 5, "title": "Fly Udaipur & Departure", "activities": ["Morning flight to Udaipur", "Lake Pichola boat ride & City Palace", "Airport transfer & departure"] }
+      ]
     }
   ],
   "international": [
@@ -91,7 +181,22 @@
       "badge": "Luxury",
       "badgeColor": "#4A90E2",
       "rating": "5.0",
-      "inclusions": ["Resorts", "All Meals", "Snorkeling", "Spa", "Transfers"]
+      "inclusions": ["Resorts", "All Meals", "Snorkeling", "Spa", "Transfers"],
+      "overview": "The Maldives is the world's most romantic island destination — a mosaic of tropical lagoons, white coral beaches, and overwater bungalows that seem to float above the turquoise sea. Snorkel with manta rays, indulge in world-class spa treatments, and watch the stars reflect in the lagoon from your private deck.",
+      "highlights": [
+        "Overwater bungalow with private lagoon access",
+        "Manta ray & whale shark snorkeling",
+        "Couples' spa with ocean views",
+        "Sandbank sunset picnic",
+        "Glass-bottom kayaking over coral reefs"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Male & Transfer", "activities": ["International arrival at Male", "Seaplane to resort island", "Welcome refreshments & beach sunset"] },
+        { "day": 2, "title": "Marine Paradise", "activities": ["House reef snorkeling with guide", "Glass-bottom kayaking tour", "Spa couples' treatment"] },
+        { "day": 3, "title": "Sandbank & Dolphin", "activities": ["Private sandbank picnic", "Dolphin cruise at sunset", "Stargazing on private deck"] },
+        { "day": 4, "title": "Water Sports & Local Island", "activities": ["Jet ski & parasailing", "Visit local Maldivian village island", "Farewell beach bonfire dinner"] },
+        { "day": 5, "title": "Departure", "activities": ["Final snorkel & leisurely breakfast", "Seaplane to Male airport", "International departure"] }
+      ]
     },
     {
       "id": "2",
@@ -104,7 +209,23 @@
       "badge": "Tropical",
       "badgeColor": "#7AAD5C",
       "rating": "4.9",
-      "inclusions": ["Hotels", "Breakfast", "Temple Tours", "Spa", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Temple Tours", "Spa", "Transfers"],
+      "overview": "Bali is the Island of the Gods — and once you visit, you'll understand why. From Ubud's artistic soul and sacred rice terraces to Seminyak's world-class beach clubs and Balinese temple ceremonies, Bali delivers an impossibly rich blend of spiritual beauty and tropical luxury.",
+      "highlights": [
+        "Tegallalang rice terrace sunrise walk",
+        "Tanah Lot temple at sunset",
+        "Kecak fire dance at Uluwatu cliff",
+        "Traditional Balinese cooking class",
+        "Mount Batur sunrise hike"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Bali", "activities": ["Airport pickup & Seminyak hotel check-in", "Sunset at Seminyak Beach", "Dinner at a beachfront restaurant"] },
+        { "day": 2, "title": "Ubud Culture", "activities": ["Tegallalang rice terrace", "Sacred Monkey Forest Sanctuary", "Balinese cooking class"] },
+        { "day": 3, "title": "Mount Batur", "activities": ["Pre-dawn Batur volcano hike", "Summit sunrise & crater lake views", "Afternoon hot springs & spa"] },
+        { "day": 4, "title": "Temple Day", "activities": ["Tanah Lot sea temple at sunset", "Uluwatu cliff temple", "Kecak fire dance performance"] },
+        { "day": 5, "title": "Seminyak Leisure", "activities": ["Seminyak beach club day", "Spa: Balinese massage", "Farewell dinner at rooftop restaurant"] },
+        { "day": 6, "title": "Departure", "activities": ["Breakfast in the villa", "Last-minute souvenir shopping", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "3",
@@ -117,7 +238,23 @@
       "badge": "Best Seller",
       "badgeColor": "#FF6B6B",
       "rating": "4.8",
-      "inclusions": ["Hotels", "Breakfast", "Cooking Class", "Island Tour", "Guide"]
+      "inclusions": ["Hotels", "Breakfast", "Cooking Class", "Island Tour", "Guide"],
+      "overview": "Thailand is the land of smiles, and its diversity is breathtaking. Discover Bangkok's glittering temples and street food lanes, trek through Chiang Mai's jungle and meet elephants, then relax on Phuket's powdery beaches with emerald-green island hopping.",
+      "highlights": [
+        "Ethical elephant sanctuary in Chiang Mai",
+        "Grand Palace & Wat Pho reclining Buddha",
+        "Phi Phi Islands day trip by speedboat",
+        "Authentic Thai cooking class",
+        "Floating market experience"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Bangkok", "activities": ["Airport pickup & hotel check-in", "Khao San Road & Wat Pho evening", "Street food tasting tour"] },
+        { "day": 2, "title": "Bangkok Temples", "activities": ["Grand Palace & Emerald Buddha", "Floating market boat tour", "Chao Phraya sunset cruise"] },
+        { "day": 3, "title": "Chiang Mai", "activities": ["Flight to Chiang Mai", "Elephant sanctuary half-day", "Thai cooking class with local chef"] },
+        { "day": 4, "title": "Fly to Phuket", "activities": ["Morning Chiang Mai temples walk", "Flight to Phuket", "Patong Beach evening"] },
+        { "day": 5, "title": "Phi Phi Islands", "activities": ["Full-day Phi Phi speedboat tour", "Maya Bay snorkeling", "Monkey Bay & beach BBQ"] },
+        { "day": 6, "title": "Departure", "activities": ["Morning beach leisure", "Souvenir shopping at local market", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "4",
@@ -130,7 +267,24 @@
       "badge": "Cultural",
       "badgeColor": "#C27A40",
       "rating": "4.7",
-      "inclusions": ["Hotels", "Breakfast", "Cruise", "Walking Tour", "Guide"]
+      "inclusions": ["Hotels", "Breakfast", "Cruise", "Walking Tour", "Guide"],
+      "overview": "Vietnam is a country that captivates every sense — from Hanoi's ancient temples and French colonial charm to Halong Bay's legendary limestone karsts and Ho Chi Minh City's electric energy. This 7-day journey through Vietnam's greatest hits will leave you wanting more.",
+      "highlights": [
+        "Halong Bay overnight cruise (UNESCO World Heritage)",
+        "Cu Chi Tunnels, Ho Chi Minh City",
+        "Hanoi's Old Quarter street food tour",
+        "Mekong Delta boat journey",
+        "Hoi An Ancient Town lanterns"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Hanoi", "activities": ["International arrival & hotel check-in", "Hoan Kiem Lake & Ngoc Son Temple", "Old Quarter street food evening tour"] },
+        { "day": 2, "title": "Halong Bay Cruise", "activities": ["Drive to Halong Bay & board cruise", "Sung Sot Cave & kayaking", "Dinner & overnight on the bay"] },
+        { "day": 3, "title": "Halong & Fly South", "activities": ["Sunrise on the bay & final cruise", "Return to Hanoi", "Flight to Ho Chi Minh City"] },
+        { "day": 4, "title": "Ho Chi Minh City", "activities": ["Cu Chi Tunnels guided tour", "War Remnants Museum", "Ben Thanh Market evening"] },
+        { "day": 5, "title": "Mekong Delta", "activities": ["Full-day Mekong Delta boat tour", "Floating market & village visit", "Local homestay lunch"] },
+        { "day": 6, "title": "Hoi An", "activities": ["Flight to Da Nang, transfer to Hoi An", "Ancient Town lantern festival walk", "Tailor-made clothing fitting"] },
+        { "day": 7, "title": "Departure", "activities": ["Morning An Bang Beach", "Flight from Da Nang", "International departure"] }
+      ]
     },
     {
       "id": "5",
@@ -143,7 +297,22 @@
       "badge": "Premium",
       "badgeColor": "#1a1a1a",
       "rating": "4.9",
-      "inclusions": ["Hotels", "Breakfast", "Desert Safari", "Shopping", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Desert Safari", "Shopping", "Transfers"],
+      "overview": "Dubai is where records are broken daily — tallest building, largest mall, most extravagant experiences. But beyond the superlatives lies a city with genuine warmth, incredible food, and an Abu Dhabi that houses one of the world's most magnificent mosques.",
+      "highlights": [
+        "Burj Khalifa 'At the Top' SKY observation deck",
+        "Sheikh Zayed Grand Mosque, Abu Dhabi",
+        "Red Dune desert safari & Bedouin camp",
+        "Dubai Mall & Dubai Fountain show",
+        "Gold & Spice Souk in Old Dubai"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Dubai", "activities": ["Airport pickup & luxury hotel check-in", "Dubai Marina evening walk", "Dinner at a modern Arabian restaurant"] },
+        { "day": 2, "title": "Dubai Icons", "activities": ["Burj Khalifa At the Top observation deck", "Dubai Mall & Dubai Fountain show", "Desert safari: dune bashing, camel ride, BBQ dinner"] },
+        { "day": 3, "title": "Old Dubai & Cruise", "activities": ["Gold Souk & Spice Souk", "Al Fahidi Historical Neighbourhood", "Dhow cruise dinner on Dubai Creek"] },
+        { "day": 4, "title": "Abu Dhabi", "activities": ["Sheikh Zayed Grand Mosque", "Yas Island: Ferrari World", "Louvre Abu Dhabi museum"] },
+        { "day": 5, "title": "Departure", "activities": ["Jumeirah Beach photo stop", "Last-minute shopping", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "6",
@@ -156,7 +325,22 @@
       "badge": "Modern",
       "badgeColor": "#4A90E2",
       "rating": "4.8",
-      "inclusions": ["Hotels", "Breakfast", "Gardens Tour", "Sentosa", "Transfers"]
+      "inclusions": ["Hotels", "Breakfast", "Gardens Tour", "Sentosa", "Transfers"],
+      "overview": "Singapore is a city-state that punches far above its weight — an immaculate urban garden where futuristic architecture meets lush tropical greenery, hawker centres serve world-class food, and every neighbourhood tells a different cultural story.",
+      "highlights": [
+        "Gardens by the Bay & Cloud Forest conservatory",
+        "Marina Bay Sands SkyPark observation",
+        "Universal Studios Singapore on Sentosa Island",
+        "Clarke Quay & Singapore River cruise",
+        "Hawker food trail: chicken rice, laksa, chilli crab"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Singapore", "activities": ["Changi Airport arrival", "Hotel check-in at Marina Bay area", "Marina Bay Sands & Helix Bridge evening"] },
+        { "day": 2, "title": "Gardens & Culture", "activities": ["Gardens by the Bay & Cloud Forest", "Chinatown: Buddha Tooth Relic Temple", "Hawker Centre food trail at Maxwell Food Centre"] },
+        { "day": 3, "title": "Sentosa Island", "activities": ["Universal Studios Singapore", "S.E.A. Aquarium", "Cable car back to mainland"] },
+        { "day": 4, "title": "City Exploration", "activities": ["Little India & Sri Veeramakaliamman Temple", "Kampong Glam & Haji Lane", "Clarke Quay dinner & river cruise"] },
+        { "day": 5, "title": "Departure", "activities": ["Orchard Road morning shopping", "Singapore Botanic Gardens walk", "Airport transfer from Changi"] }
+      ]
     }
   ]
 }

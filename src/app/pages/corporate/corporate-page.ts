@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import corporateData from '../../data/corporate.json';
 
 interface CorporatePackage {
+  id: string;
   title: string;
   locations: string;
   duration: string;
@@ -24,7 +26,7 @@ interface CorporateStat {
 @Component({
   selector: 'app-corporate-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
     <section class="bg-gradient-to-b from-slate-700 to-[#7AAD5C] text-white py-28 px-6">
@@ -118,8 +120,8 @@ interface CorporateStat {
                     <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ pkg.price }}</p>
                     <span class="text-[10px] text-gray-400 font-body">per person</span>
                   </div>
-                  <a href="#" class="btn-pista">
-                    Get Quote
+                  <a [routerLink]="['/package-detail', 'corporate', pkg.id]" class="btn-pista">
+                    View Details
                   </a>
                 </div>
               </div>
@@ -234,60 +236,6 @@ interface CorporateStat {
   `]
 })
 export class CorporatePage {
-  corpStats: CorporateStat[] = [
-    { value: '500+', label: 'Corporate Clients', icon: '' },
-    { value: '98%', label: 'Client Satisfaction', icon: '' },
-    { value: '15+', label: 'Years Experience', icon: '' },
-  ];
-
-  corporatePackages: CorporatePackage[] = [
-    {
-      title: 'MICE Solutions',
-      locations: 'Global Destinations',
-      duration: 'Customizable',
-      group: 'Large Groups',
-      price: '₹50,000+',
-      img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=500&q=85',
-      badge: 'Complete',
-      badgeColor: '#7AAD5C',
-      rating: '4.9',
-      inclusions: ['Event Management', 'Venue Selection', 'AV Coordination', 'On-site Support', 'Reporting']
-    },
-    {
-      title: 'Team Outings',
-      locations: 'Domestic & International',
-      duration: '2-5 Days',
-      group: '20-500 People',
-      price: '₹15,000+',
-      img: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&q=85',
-      badge: 'Popular',
-      badgeColor: '#4A90E2',
-      rating: '4.8',
-      inclusions: ['Team Building', 'Activities', 'Accommodations', 'Meals', 'Transportation']
-    },
-    {
-      title: 'Incentive Travel',
-      locations: 'Premium Destinations',
-      duration: '3-7 Days',
-      group: 'Key Performers',
-      price: '₹40,000+',
-      img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=85',
-      badge: 'Luxury',
-      badgeColor: '#FFD700',
-      rating: '5.0',
-      inclusions: ['5-Star Hotels', 'Fine Dining', 'Spa & Wellness', 'Experiences', 'VIP Service']
-    },
-    {
-      title: 'Conference Tours',
-      locations: 'Major Cities',
-      duration: '4-8 Days',
-      group: 'Professionals',
-      price: '₹35,000+',
-      img: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=500&q=85',
-      badge: 'Business',
-      badgeColor: '#1a1a1a',
-      rating: '4.7',
-      inclusions: ['Conference Setup', 'Leisure Tours', 'Hotel Booking', 'Transportation', 'Support']
-    }
-  ];
+  corpStats: CorporateStat[] = corporateData.stats.map(s => ({ ...s, icon: '' }));
+  corporatePackages: CorporatePackage[] = corporateData.packages as CorporatePackage[];
 }

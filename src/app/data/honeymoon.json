@@ -11,7 +11,22 @@
       "badge": "Most Popular",
       "badgeColor": "#FF1744",
       "rating": "5.0",
-      "inclusions": ["Overwater Bungalow", "All Meals", "Snorkeling", "Spa", "Sunset Cruise"]
+      "inclusions": ["Overwater Bungalow", "All Meals", "Snorkeling", "Spa", "Sunset Cruise"],
+      "overview": "The ultimate romantic escape — the Maldives is nature's own paradise for honeymooners. Stay in a stunning overwater bungalow with direct lagoon access, dine under the stars, snorkel through vibrant coral reefs, and drift into each other's arms on a private sunset cruise. This is romance at its most breathtaking.",
+      "highlights": [
+        "Overwater bungalow with private sun deck & direct ocean access",
+        "Couples' spa ritual with traditional Maldivian techniques",
+        "Private sunset dhoni cruise with champagne",
+        "House reef snorkeling with manta rays & turtles",
+        "Romantic candlelight dinner on a sandbank"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Male & Transfer", "activities": ["International arrival at Male airport", "Seaplane transfer to resort island", "Welcome with flower garlands & room tour, beach sunset"] },
+        { "day": 2, "title": "Lagoon & Spa", "activities": ["Leisurely breakfast at overwater restaurant", "Couples' spa: 90-min traditional massage & flower bath", "Evening sunset dhoni cruise with champagne & canapés"] },
+        { "day": 3, "title": "Snorkeling & Marine Life", "activities": ["Guided snorkeling on vibrant house reef", "Glass-bottom kayaking to see coral & fish", "Private candlelight sandbank dinner under the stars"] },
+        { "day": 4, "title": "Island Exploration", "activities": ["Visit local Maldivian island & fishing village", "Dolphin watching boat trip", "Farewell beach bonfire & gourmet dinner"] },
+        { "day": 5, "title": "Departure", "activities": ["Leisurely breakfast & final swim", "Seaplane transfer to Male", "Departure with hearts full of love"] }
+      ]
     },
     {
       "id": "2",
@@ -24,7 +39,23 @@
       "badge": "Romantic",
       "badgeColor": "#E91E63",
       "rating": "4.9",
-      "inclusions": ["Resort Stay", "Breakfast", "Temple Tours", "Couple Spa", "Dinner Cruise"]
+      "inclusions": ["Resort Stay", "Breakfast", "Temple Tours", "Couple Spa", "Dinner Cruise"],
+      "overview": "Bali weaves magic for couples with its emerald rice terraces, ancient Hindu temples, and world-class spas. From the cultural heart of Ubud to the romantic sunsets of Seminyak, this 6-day honeymoon immerses you in Bali's unique blend of spirituality, beauty, and indulgence — all crafted just for two.",
+      "highlights": [
+        "Private Balinese blessing ceremony for couples",
+        "Sunrise trek to Mount Batur volcano",
+        "Tegallalang rice terrace photo walk",
+        "Romantic dinner cruise along Jimbaran Bay",
+        "Couples' floral bath at luxury spa"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Bali", "activities": ["Airport pickup & resort check-in in Seminyak", "Seminyak beach sunset at Ku De Ta", "Romantic dinner at beachfront restaurant"] },
+        { "day": 2, "title": "Ubud – Culture & Nature", "activities": ["Tegallalang rice terrace walk", "Sacred Monkey Forest Sanctuary", "Traditional Balinese cooking class for two"] },
+        { "day": 3, "title": "Mount Batur Sunrise", "activities": ["Pre-dawn drive & sunrise hike to Mount Batur", "Hot springs soak post-hike", "Afternoon Ubud spa: couples' floral bath & massage"] },
+        { "day": 4, "title": "Temples & Blessing", "activities": ["Tanah Lot temple at sunset", "Uluwatu cliff temple & Kecak fire dance", "Private Balinese blessing ceremony for couples"] },
+        { "day": 5, "title": "Leisure & Dinner Cruise", "activities": ["Relaxed morning at resort pool", "Spa couples' treatment", "Jimbaran Bay seafood dinner cruise with live music"] },
+        { "day": 6, "title": "Departure", "activities": ["Farewell breakfast in bed", "Last souvenir shopping in Seminyak", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "3",
@@ -37,7 +68,23 @@
       "badge": "Scenic",
       "badgeColor": "#8B4513",
       "rating": "4.8",
-      "inclusions": ["Houseboat", "Breakfast", "Dal Lake Cruise", "Gondola Ride", "Picnic"]
+      "inclusions": ["Houseboat", "Breakfast", "Dal Lake Cruise", "Gondola Ride", "Picnic"],
+      "overview": "Kashmir — where heaven meets earth. Spend your honeymoon gliding across the legendary Dal Lake in a traditional shikara, staying in a luxurious wooden houseboat, and strolling through meadows of wildflowers in Pahalgam. With snow-capped peaks as your backdrop, Kashmir is a fairy-tale honeymoon come true.",
+      "highlights": [
+        "Houseboat stay on Dal Lake with personal shikara service",
+        "Gondola (ropeway) ride to Kongdori — Himalayan views",
+        "Betaab Valley picnic in Pahalgam",
+        "Shalimar Bagh Mughal garden sunset stroll",
+        "Gulmarg snowfield visit & skiing/snow activities"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Srinagar", "activities": ["Airport pickup & transfer to houseboat on Dal Lake", "Welcome shikara ride with flower garlands", "Sunset dinner on houseboat deck"] },
+        { "day": 2, "title": "Dal Lake & Mughal Gardens", "activities": ["Morning shikara market tour on Dal Lake", "Shalimar Bagh & Nishat Bagh Mughal Gardens", "Hazratbal Shrine & local bazaar evening"] },
+        { "day": 3, "title": "Gulmarg Snow Adventure", "activities": ["Drive to Gulmarg meadows", "Gondola ropeway to Kongdori (phase 1 & 2)", "Snow activities: skiing or snowball play"] },
+        { "day": 4, "title": "Pahalgam – Valley of Shepherds", "activities": ["Drive to Pahalgam", "Betaab Valley & Chandanwari picnic", "Aru Valley horse ride for couples"] },
+        { "day": 5, "title": "Pahalgam Leisure", "activities": ["Morning walk along Lidder River", "Baisaran meadow ('Mini Switzerland')", "Evening bonfire & Kashmiri wazwan dinner"] },
+        { "day": 6, "title": "Return & Departure", "activities": ["Return drive to Srinagar", "Last shikara ride on Dal Lake", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "4",
@@ -50,7 +97,25 @@
       "badge": "Premium",
       "badgeColor": "#1a1a1a",
       "rating": "5.0",
-      "inclusions": ["5-Star Hotels", "Breakfast", "City Tours", "Gondola Rides", "Wine Tasting"]
+      "inclusions": ["5-Star Hotels", "Breakfast", "City Tours", "Gondola Rides", "Wine Tasting"],
+      "overview": "Three of Europe's most romantic cities — Paris, Venice, and Vienna — united in one extraordinary honeymoon journey. Walk Paris's cobblestone streets hand in hand, drift through Venice's canals by private gondola, and waltz through Vienna's imperial palaces. A 8-day love story set across Europe's most enchanting backdrops.",
+      "highlights": [
+        "Private gondola serenade in Venice's canals",
+        "Eiffel Tower champagne toast at sunset",
+        "Vienna State Opera gala evening",
+        "Truffle dinner at a Paris bistro",
+        "Day trip to Hallstatt fairy-tale village from Vienna"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Paris", "activities": ["International arrival & luxury hotel check-in", "Evening Seine River cruise at twilight", "Dinner at a Michelin-starred bistro"] },
+        { "day": 2, "title": "Paris – City of Love", "activities": ["Eiffel Tower with champagne at summit", "Montmartre artists' quarter & Sacré-Cœur", "Louvre Museum highlights tour"] },
+        { "day": 3, "title": "Versailles & Departure", "activities": ["Palace of Versailles & Marie Antoinette's garden", "Truffle dinner at classic Parisian brasserie", "Evening train to Venice"] },
+        { "day": 4, "title": "Arrive Venice", "activities": ["Arrive Venice, water taxi to hotel on Grand Canal", "Private gondola serenade through hidden canals", "Rialto market evening & prosecco at a bacaro"] },
+        { "day": 5, "title": "Venice – La Serenissima", "activities": ["St. Mark's Basilica & Doge's Palace tour", "Glass-blowing demonstration in Murano", "Sunset from Punta della Dogana"] },
+        { "day": 6, "title": "Venice to Vienna", "activities": ["Morning espresso & last canal stroll", "Train to Vienna (scenic route)", "Vienna hotel check-in & evening walk along the Ring"] },
+        { "day": 7, "title": "Vienna – Imperial Romance", "activities": ["Schönbrunn Palace & gardens tour", "Vienna State Opera evening performance", "Wine tasting at a classic Viennese Heurigen"] },
+        { "day": 8, "title": "Departure from Vienna", "activities": ["Breakfast at Café Central (historic coffeehouse)", "Naschmarkt farewell stroll", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "5",
@@ -63,7 +128,21 @@
       "badge": "Tranquil",
       "badgeColor": "#7AAD5C",
       "rating": "4.7",
-      "inclusions": ["Houseboat", "Meals", "Backwater Tour", "Ayurveda Spa", "Beach Time"]
+      "inclusions": ["Houseboat", "Meals", "Backwater Tour", "Ayurveda Spa", "Beach Time"],
+      "overview": "Kerala's backwaters are a paradise of tranquility — a labyrinth of palm-fringed canals, shimmering lakes, and lush paddy fields. Drift through this serene waterworld on your private houseboat, indulge in Ayurveda treatments, and wake up to the sounds of birds on mirror-still water. Romance in its most gentle form.",
+      "highlights": [
+        "Private houseboat on Vembanad Lake",
+        "Ayurveda couples' treatment at a lakeside spa",
+        "Kathakali classical dance performance in Kochi",
+        "Kumarakom Bird Sanctuary morning walk",
+        "Sunset canoe ride through village canals"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Kochi", "activities": ["Airport pickup & boutique hotel check-in", "Fort Kochi heritage walk: Chinese fishing nets, Dutch Palace", "Kathakali dance performance & seafood dinner"] },
+        { "day": 2, "title": "Alleppey Houseboat", "activities": ["Drive to Alleppey & board luxury houseboat", "Backwater cruise through paddy fields & villages", "Overnight on houseboat with fresh Kerala meals"] },
+        { "day": 3, "title": "Kumarakom – Lakeside Bliss", "activities": ["Morning bird watching at Kumarakom Bird Sanctuary", "Couples' Ayurveda spa ritual (2-hour session)", "Sunset canoe ride through narrow village canals"] },
+        { "day": 4, "title": "Departure", "activities": ["Leisurely morning on the lake", "Drive to Kochi airport", "Departure — carrying Kerala's calm in your hearts"] }
+      ]
     },
     {
       "id": "6",
@@ -76,7 +155,23 @@
       "badge": "Exotic",
       "badgeColor": "#00BCD4",
       "rating": "4.9",
-      "inclusions": ["Island Resort", "All Meals", "Beach Activities", "Snorkeling", "Sunset Sail"]
+      "inclusions": ["Island Resort", "All Meals", "Beach Activities", "Snorkeling", "Sunset Sail"],
+      "overview": "The Seychelles archipelago is one of the world's last true tropical paradises — granite boulders, turquoise lagoons, and pristine coral reefs set against skies of impossible blue. Hop between the islands of Praslin and La Digue, discovering secluded beaches, rare endemic wildlife, and luxurious island intimacy built for two.",
+      "highlights": [
+        "Anse Source d'Argent — world's most photographed beach",
+        "Vallée de Mai Nature Reserve & coco de mer palms",
+        "Couple's sunset sail with dolphins",
+        "Private snorkeling at Anse Lazio coral reef",
+        "Creole cooking class for two"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Mahé, Transfer to Praslin", "activities": ["International arrival at Mahé", "Ferry to Praslin island", "Beach resort check-in & welcome cocktails at sunset"] },
+        { "day": 2, "title": "Praslin – Nature & Beach", "activities": ["Vallée de Mai UNESCO reserve: coco de mer forest", "Anse Lazio beach: snorkeling the coral reef", "Creole cooking class for couples"] },
+        { "day": 3, "title": "La Digue – Iconic Beach", "activities": ["Ferry to La Digue island", "Anse Source d'Argent beach (bike ride)", "Giant Aldabra tortoise reserve visit"] },
+        { "day": 4, "title": "La Digue Exploration", "activities": ["Kayak to hidden Grand Anse beach", "Snorkeling at Petite Anse with marine turtles", "Sunset sail with dolphin spotting & champagne"] },
+        { "day": 5, "title": "Return Praslin & Leisure", "activities": ["Ferry back to Praslin", "Resort spa couples' treatment", "Romantic candlelight beach dinner"] },
+        { "day": 6, "title": "Departure", "activities": ["Final island morning stroll", "Ferry to Mahé for international flight", "Departure from paradise"] }
+      ]
     }
   ]
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import honeymoonData from '../../data/honeymoon.json';
 
 @Component({
   selector: 'app-honeymoon-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
     <section class="bg-gradient-to-b from-red-600 via-red-500 to-[#7AAD5C] text-white py-28 px-6">
@@ -96,7 +97,7 @@ import honeymoonData from '../../data/honeymoon.json';
                     <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ pkg.price }}</p>
                     <span class="text-[10px] text-gray-400 font-body">per couple</span>
                   </div>
-                  <a href="#" class="btn-pista">
+                  <a [routerLink]="['/package-detail', 'honeymoon', pkg.id]" class="btn-pista">
                     View Details
                   </a>
                 </div>

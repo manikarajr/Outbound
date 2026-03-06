@@ -57,7 +57,7 @@
                 <p class="section-label text-[10px] font-extrabold tracking-[0.22em] uppercase mb-4">Domestic India</p>
                 <ul class="space-y-1">
                   <li *ngFor="let dest of domestic">
-                    <a href="#"
+                    <a [routerLink]="['/package-detail', 'destinations-domestic', dest.id]" (click)="closeMenu()"
                       class="dest-link group flex items-center gap-3 p-2 rounded-xl transition-all duration-200">
                       <div class="dest-thumb w-9 h-9 rounded-lg overflow-hidden shrink-0 ring-1 ring-white/10">
                         <img [src]="dest.thumb" [alt]="dest.name"
@@ -78,7 +78,7 @@
                 <p class="section-label text-[10px] font-extrabold tracking-[0.22em] uppercase mb-4">International</p>
                 <ul class="space-y-1">
                   <li *ngFor="let dest of international">
-                    <a href="#"
+                    <a [routerLink]="['/package-detail', 'destinations-international', dest.id]" (click)="closeMenu()"
                       class="dest-link group flex items-center gap-3 p-2 rounded-xl transition-all duration-200">
                       <div class="dest-thumb w-9 h-9 rounded-lg overflow-hidden shrink-0 ring-1 ring-white/10">
                         <img [src]="dest.thumb" [alt]="dest.name"
@@ -146,7 +146,7 @@
             </div>
             <div class="mega-body grid grid-cols-3 gap-6 p-6">
               <ng-container *ngFor="let pkg of packages">
-                <a href="#" class="pkg-card group block rounded-xl overflow-hidden relative h-44 cursor-pointer">
+                <a [routerLink]="['/packages']" (click)="closeMenu()" class="pkg-card group block rounded-xl overflow-hidden relative h-44 cursor-pointer">
                   <img [src]="pkg.image" [alt]="pkg.label"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -179,7 +179,7 @@
               <!-- Hero card + grid -->
               <div class="grid grid-cols-[1.6fr_1fr_1fr] gap-4">
                 <!-- Hero -->
-                <a href="#" class="honey-hero group relative rounded-xl overflow-hidden h-56 cursor-pointer">
+                <a [routerLink]="['/package-detail', 'honeymoon', honeymoonDestinations[0].id]" (click)="closeMenu()" class="honey-hero group relative rounded-xl overflow-hidden h-56 cursor-pointer">
                   <img [src]="honeymoonDestinations[0].image" [alt]="honeymoonDestinations[0].label"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
@@ -193,7 +193,7 @@
                 </a>
                 <!-- Small cards col 1 -->
                 <div class="flex flex-col gap-4">
-                  <a *ngFor="let h of honeymoonDestinations.slice(1,3)" href="#"
+                  <a *ngFor="let h of honeymoonDestinations.slice(1,3)" [routerLink]="['/package-detail', 'honeymoon', h.id]" (click)="closeMenu()"
                     class="honey-card group relative rounded-xl overflow-hidden h-[104px] cursor-pointer">
                     <img [src]="h.image" [alt]="h.label"
                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -206,7 +206,7 @@
                 </div>
                 <!-- Small cards col 2 -->
                 <div class="flex flex-col gap-4">
-                  <a *ngFor="let h of honeymoonDestinations.slice(3,5)" href="#"
+                  <a *ngFor="let h of honeymoonDestinations.slice(3,5)" [routerLink]="['/package-detail', 'honeymoon', h.id]" (click)="closeMenu()"
                     class="honey-card group relative rounded-xl overflow-hidden h-[104px] cursor-pointer">
                     <img [src]="h.image" [alt]="h.label"
                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -235,7 +235,7 @@
               <a href="#international" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">Explore All</a>
             </div>
             <div class="mega-body p-6 grid grid-cols-5 gap-4">
-              <a *ngFor="let region of internationalRegions" href="#"
+              <a *ngFor="let region of internationalRegions" [routerLink]="['/international']" (click)="closeMenu()"
                 class="intl-card group relative rounded-xl overflow-hidden cursor-pointer" style="height: 200px;">
                 <img [src]="region.image" [alt]="region.label"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -268,7 +268,7 @@
             </div>
             <div class="mega-body p-6">
               <div class="grid grid-cols-4 gap-4">
-                <a *ngFor="let corp of corporateOptions" href="#"
+                <a *ngFor="let corp of corporateOptions" [routerLink]="['/corporate']" (click)="closeMenu()"
                   class="corp-card group relative rounded-xl overflow-hidden cursor-pointer" style="height: 180px;">
                   <img [src]="corp.image" [alt]="corp.label"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -411,7 +411,7 @@
             <p class="mobile-section-label text-[9px] font-extrabold tracking-[0.25em] uppercase mt-3 mb-2">Domestic
               India</p>
             <div class="grid grid-cols-2 gap-2">
-              <a *ngFor="let d of domestic" href="#"
+              <a *ngFor="let d of domestic" [routerLink]="['/package-detail', 'destinations-domestic', d.id]" (click)="toggleMobileMenu()"
                 class="mobile-dest-card group relative rounded-xl overflow-hidden h-20">
                 <img [src]="d.thumb" [alt]="d.name" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -424,7 +424,7 @@
             <p class="mobile-section-label text-[9px] font-extrabold tracking-[0.25em] uppercase mt-4 mb-2">
               International</p>
             <div class="grid grid-cols-2 gap-2">
-              <a *ngFor="let i of international" href="#"
+              <a *ngFor="let i of international" [routerLink]="['/package-detail', 'destinations-international', i.id]" (click)="toggleMobileMenu()"
                 class="mobile-dest-card group relative rounded-xl overflow-hidden h-20">
                 <img [src]="i.thumb" [alt]="i.name" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -439,7 +439,7 @@
           <!-- Packages accordion -->
           <ng-container *ngIf="item.key === 'packages'">
             <div class="grid grid-cols-2 gap-2 mt-2">
-              <a *ngFor="let pkg of packages" href="#"
+              <a *ngFor="let pkg of packages" [routerLink]="['/packages']" (click)="toggleMobileMenu()"
                 class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
                 <img [src]="pkg.image" [alt]="pkg.label" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -453,7 +453,7 @@
           <!-- Honeymoon accordion -->
           <ng-container *ngIf="item.key === 'honeymoon'">
             <div class="grid grid-cols-2 gap-2 mt-2">
-              <a *ngFor="let h of honeymoonDestinations" href="#"
+              <a *ngFor="let h of honeymoonDestinations" [routerLink]="['/package-detail', 'honeymoon', h.id]" (click)="toggleMobileMenu()"
                 class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
                 <img [src]="h.image" [alt]="h.label" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -468,7 +468,7 @@
           <!-- International accordion -->
           <ng-container *ngIf="item.key === 'international'">
             <div class="grid grid-cols-2 gap-2 mt-2">
-              <a *ngFor="let r of internationalRegions" href="#"
+              <a *ngFor="let r of internationalRegions" [routerLink]="['/international']" (click)="toggleMobileMenu()"
                 class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
                 <img [src]="r.image" [alt]="r.label" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -483,7 +483,7 @@
           <!-- Corporate accordion -->
           <ng-container *ngIf="item.key === 'corporate'">
             <div class="grid grid-cols-2 gap-2 mt-2">
-              <a *ngFor="let c of corporateOptions" href="#"
+              <a *ngFor="let c of corporateOptions" [routerLink]="['/corporate']" (click)="toggleMobileMenu()"
                 class="mobile-dest-card relative rounded-xl overflow-hidden h-24">
                 <img [src]="c.image" [alt]="c.label" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>

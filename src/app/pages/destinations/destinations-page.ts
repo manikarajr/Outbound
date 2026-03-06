@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import destinationsData from '../../data/destinations.json';
 
 @Component({
   selector: 'app-destinations-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
     <section class="bg-gradient-to-b from-[#7AAD5C] to-[#5C8A3E] text-white py-28 px-6">
@@ -91,7 +92,7 @@ import destinationsData from '../../data/destinations.json';
                     <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ dest.price }}</p>
                     <span class="text-[10px] text-gray-400 font-body">per person</span>
                   </div>
-                  <a href="#" class="btn-pista">
+                  <a [routerLink]="['/package-detail', 'destinations-domestic', dest.id]" class="btn-pista">
                     View Details
                   </a>
                 </div>
@@ -169,7 +170,7 @@ import destinationsData from '../../data/destinations.json';
                     <p class="font-body font-bold text-gray-900 text-xl leading-none mt-0.5">{{ dest.price }}</p>
                     <span class="text-[10px] text-gray-400 font-body">per person</span>
                   </div>
-                  <a href="#" class="btn-pista">
+                  <a [routerLink]="['/package-detail', 'destinations-international', dest.id]" class="btn-pista">
                     View Details
                   </a>
                 </div>

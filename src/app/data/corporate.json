@@ -1,0 +1,116 @@
+{
+  "packages": [
+    {
+      "id": "1",
+      "title": "MICE Solutions",
+      "locations": "Global Destinations",
+      "duration": "Customizable",
+      "group": "Large Groups",
+      "price": "₹50,000+",
+      "img": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=500&q=85",
+      "badge": "Complete",
+      "badgeColor": "#7AAD5C",
+      "rating": "4.9",
+      "inclusions": ["Event Management", "Venue Selection", "AV Coordination", "On-site Support", "Reporting"],
+      "overview": "Our MICE (Meetings, Incentives, Conferences & Exhibitions) solutions are end-to-end corporate travel programs tailored to your organization's unique goals. From venue scouting and logistics to AV coordination and post-event reporting, we handle every detail so you can focus on outcomes.",
+      "highlights": [
+        "Dedicated event coordinator from planning to execution",
+        "Curated venue selection across 50+ global destinations",
+        "Custom branding & décor at all touchpoints",
+        "24/7 on-site support team",
+        "Comprehensive post-event analytics & ROI reporting"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrival & Registration", "activities": ["Airport pickups & hotel check-in for all delegates", "Welcome reception & networking cocktails", "Venue walkthrough & program briefing"] },
+        { "day": 2, "title": "Conference Day 1", "activities": ["Keynote sessions & plenary conference", "Breakout workshops & panel discussions", "Gala dinner with entertainment"] },
+        { "day": 3, "title": "Conference Day 2 & Excursion", "activities": ["Morning sessions & awards ceremony", "Afternoon team excursion or leisure activity", "Farewell dinner at premium restaurant"] },
+        { "day": 4, "title": "Departures", "activities": ["Checkout & group transfers to airport", "Post-event report delivery within 48 hours"] }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Team Outings",
+      "locations": "Domestic & International",
+      "duration": "2-5 Days",
+      "group": "20-500 People",
+      "price": "₹15,000+",
+      "img": "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&q=85",
+      "badge": "Popular",
+      "badgeColor": "#4A90E2",
+      "rating": "4.8",
+      "inclusions": ["Team Building", "Activities", "Accommodations", "Meals", "Transportation"],
+      "overview": "Strengthen team bonds and boost morale with our carefully crafted team outing programs. From adventure camps in the hills to beach retreats and city escapes, we design experiences that foster collaboration, communication, and shared joy — turning colleagues into a cohesive, motivated team.",
+      "highlights": [
+        "Expert-facilitated team building activities",
+        "Choose from adventure, cultural, or leisure themes",
+        "Scalable for teams of 20 to 500+ people",
+        "Customized schedule matching your team's energy",
+        "Full-service accommodation & dining arrangements"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive & Settle In", "activities": ["Transportation from office to destination", "Hotel check-in & welcome briefing", "Ice-breaker activities & team dinner"] },
+        { "day": 2, "title": "Team Building Day", "activities": ["Morning: Outdoor team challenges & activities", "Afternoon: Workshop or adventure activity", "Evening: Cultural program or bonfire night"] },
+        { "day": 3, "title": "Leisure & Departure", "activities": ["Leisure morning: optional activities", "Awards & appreciation ceremony", "Return transfers to city"] }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Incentive Travel",
+      "locations": "Premium Destinations",
+      "duration": "3-7 Days",
+      "group": "Key Performers",
+      "price": "₹40,000+",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=85",
+      "badge": "Luxury",
+      "badgeColor": "#FFD700",
+      "rating": "5.0",
+      "inclusions": ["5-Star Hotels", "Fine Dining", "Spa & Wellness", "Experiences", "VIP Service"],
+      "overview": "Reward your top performers with extraordinary incentive travel programs that they will talk about for years. Our luxury incentive packages to the world's most aspirational destinations — Maldives, Europe, Dubai, Bali — are designed to inspire, motivate, and retain your best talent.",
+      "highlights": [
+        "5-star accommodations at iconic resorts",
+        "Exclusive access to VIP experiences",
+        "Personal butler & concierge service",
+        "Custom recognition moments & awards",
+        "Curated fine dining across every destination"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "VIP Arrival", "activities": ["Premium transfers with welcome kits", "5-star hotel check-in & personal butler intro", "Welcome gala dinner at a signature restaurant"] },
+        { "day": 2, "title": "Signature Experiences", "activities": ["Exclusive destination experience (yacht, safari, vineyard, etc.)", "Spa & wellness session", "Recognition ceremony & award presentation"] },
+        { "day": 3, "title": "Leisure & Celebration", "activities": ["Free morning: leisure activities at resort", "Afternoon curated excursion", "Farewell gala dinner with live entertainment"] },
+        { "day": 4, "title": "VIP Departure", "activities": ["Premium checkout & farewell gifts", "Private transfers to airport", "Personalized thank-you from Outbound Travelers"] }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Conference Tours",
+      "locations": "Major Cities",
+      "duration": "4-8 Days",
+      "group": "Professionals",
+      "price": "₹35,000+",
+      "img": "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=500&q=85",
+      "badge": "Business",
+      "badgeColor": "#1a1a1a",
+      "rating": "4.7",
+      "inclusions": ["Conference Setup", "Leisure Tours", "Hotel Booking", "Transportation", "Support"],
+      "overview": "Blend business with pleasure on our conference tour programs. We handle all event logistics — from venue booking and conference setup to guided leisure tours that let attendees explore the destination. A seamless experience where professional goals and personal enrichment go hand in hand.",
+      "highlights": [
+        "Professional conference venue setup & AV support",
+        "Guided leisure tours to local highlights",
+        "Seamless integration of business & exploration",
+        "Networking dinner events at landmark restaurants",
+        "Post-conference extension tour options"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrival & Pre-Conference", "activities": ["Arrive at conference city, hotel check-in", "Registration & welcome networking cocktail", "City orientation tour"] },
+        { "day": 2, "title": "Conference Day", "activities": ["Full-day conference: sessions, panels, workshops", "Networking lunch & coffee breaks", "Evening gala or cultural dinner"] },
+        { "day": 3, "title": "Conference + Leisure", "activities": ["Morning conference: closing sessions", "Afternoon guided city tour (UNESCO, landmarks)", "Evening free at leisure"] },
+        { "day": 4, "title": "Extension or Departure", "activities": ["Optional: 1–4 day leisure extension package", "OR: City highlights half-day & airport transfer"] }
+      ]
+    }
+  ],
+  "stats": [
+    { "value": "500+", "label": "Corporate Clients" },
+    { "value": "98%", "label": "Client Satisfaction" },
+    { "value": "15+", "label": "Years Experience" }
+  ]
+}

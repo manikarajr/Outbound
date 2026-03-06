@@ -13,7 +13,30 @@
       "rating": "4.9",
       "tag": "Popular",
       "featured": true,
-      "inclusions": ["Flights", "Hotels", "Breakfast", "Transfers", "Guide"]
+      "inclusions": ["Flights", "Hotels", "Breakfast", "Transfers", "Guide"],
+      "overview": "Embark on an incredible 13-day journey through three of Southeast Asia's most vibrant destinations. From Bangkok's glittering temples and Chiang Mai's elephant sanctuaries to Hanoi's charming Old Quarter, Halong Bay's emerald waters, and Singapore's futuristic skyline — this trip is the perfect blend of culture, adventure, and luxury.",
+      "highlights": [
+        "Private boat cruise through the UNESCO-listed Halong Bay",
+        "Hands-on Thai cooking class in Chiang Mai",
+        "Visit Bangkok's Grand Palace and Wat Pho",
+        "Explore Singapore's Gardens by the Bay",
+        "Ethical elephant sanctuary experience"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Bangkok", "activities": ["Airport pickup & hotel check-in", "Evening stroll along Khao San Road", "Welcome dinner at riverside restaurant"] },
+        { "day": 2, "title": "Bangkok Temples & Culture", "activities": ["Grand Palace & Wat Phra Kaew (Emerald Buddha)", "Wat Pho Reclining Buddha tour", "Chao Phraya river boat cruise"] },
+        { "day": 3, "title": "Bangkok to Chiang Mai", "activities": ["Morning flight to Chiang Mai", "Afternoon Doi Suthep temple visit", "Night Bazaar shopping & street food"] },
+        { "day": 4, "title": "Chiang Mai Experiences", "activities": ["Ethical elephant sanctuary half-day", "Thai cooking class with local chef", "Old City temples walk"] },
+        { "day": 5, "title": "Fly to Hanoi", "activities": ["Morning flight to Hanoi", "Hoan Kiem Lake & Ngoc Son Temple", "Old Quarter walking tour & street food"] },
+        { "day": 6, "title": "Halong Bay Cruise", "activities": ["Drive to Halong Bay, board overnight cruise", "Cave exploration at Sung Sot Caves", "Kayaking through limestone karsts"] },
+        { "day": 7, "title": "Halong Bay & Return", "activities": ["Sunrise yoga on deck", "Swimming & beach time at secluded cove", "Return to Hanoi, afternoon free"] },
+        { "day": 8, "title": "Hanoi to Ho Chi Minh City", "activities": ["Morning flight to Ho Chi Minh City", "War Remnants Museum", "Ben Thanh Market evening visit"] },
+        { "day": 9, "title": "Mekong Delta", "activities": ["Full-day Mekong Delta tour", "Boat ride through canals & floating markets", "Traditional lunch at village homestay"] },
+        { "day": 10, "title": "Fly to Singapore", "activities": ["Morning flight to Singapore", "Marina Bay Sands skypark views", "Gardens by the Bay & Cloud Forest"] },
+        { "day": 11, "title": "Singapore Highlights", "activities": ["Sentosa Island & Universal Studios Singapore", "S.E.A. Aquarium", "Clarke Quay evening dinner"] },
+        { "day": 12, "title": "Singapore Free Day", "activities": ["Orchard Road shopping", "Chinatown & Little India exploration", "Farewell rooftop dinner"] },
+        { "day": 13, "title": "Departure", "activities": ["Hotel checkout & transfer to airport", "Departure with lifelong memories"] }
+      ]
     },
     {
       "id": "2",
@@ -28,7 +51,32 @@
       "rating": "5.0",
       "tag": "5★",
       "featured": true,
-      "inclusions": ["Flights", "5-Star Hotels", "All Meals", "Eurail Pass", "Guide"]
+      "inclusions": ["Flights", "5-Star Hotels", "All Meals", "Eurail Pass", "Guide"],
+      "overview": "Experience the crown jewels of Europe on this 15-day premium tour. Wander the romantic streets of Paris, stand in awe before the Colosseum in Rome, and soak up the vibrant culture of Barcelona. With 5-star accommodations, gourmet meals, and a Eurail pass, this tour delivers the very best of Europe in style.",
+      "highlights": [
+        "Skip-the-line access to the Eiffel Tower and Louvre Museum",
+        "Private Vatican Museums and Sistine Chapel tour",
+        "Sagrada Familia and Park Güell in Barcelona",
+        "Seine River dinner cruise in Paris",
+        "Tuscany day trip with wine tasting"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Paris", "activities": ["International arrival, luxury hotel check-in", "Evening Seine River dinner cruise", "Eiffel Tower night view"] },
+        { "day": 2, "title": "Paris – Iconic Sights", "activities": ["Louvre Museum (skip-the-line)", "Notre Dame Cathedral exterior", "Champs-Élysées & Arc de Triomphe"] },
+        { "day": 3, "title": "Paris – Art & Montmartre", "activities": ["Musée d'Orsay visit", "Montmartre & Sacré-Cœur", "Le Marais district exploration"] },
+        { "day": 4, "title": "Versailles Day Trip", "activities": ["Palace of Versailles & Hall of Mirrors", "Royal Gardens walk", "Evening return to Paris"] },
+        { "day": 5, "title": "Paris to Rome (Eurail)", "activities": ["High-speed train to Rome", "Hotel check-in & rest", "Trastevere evening stroll & dinner"] },
+        { "day": 6, "title": "Rome – Ancient City", "activities": ["Colosseum & Roman Forum (guided)", "Palatine Hill", "Piazza Navona & Pantheon"] },
+        { "day": 7, "title": "Vatican & Gelato", "activities": ["Vatican Museums & Sistine Chapel (private)", "St. Peter's Basilica & Square", "Gelato tour in the old city"] },
+        { "day": 8, "title": "Tuscany Day Trip", "activities": ["Drive through Tuscany countryside", "Siena old town & Piazza del Campo", "Chianti wine tasting at a vineyard"] },
+        { "day": 9, "title": "Rome Free Day & Depart", "activities": ["Spanish Steps & Trevi Fountain", "Shopping at Via Condotti", "Evening train to Barcelona"] },
+        { "day": 10, "title": "Arrive Barcelona", "activities": ["Hotel check-in", "La Rambla evening walk", "Dinner at Gothic Quarter restaurant"] },
+        { "day": 11, "title": "Barcelona – Gaudí Wonders", "activities": ["Sagrada Família (skip-the-line)", "Park Güell & city views", "Barceloneta Beach sunset"] },
+        { "day": 12, "title": "Barcelona – Culture", "activities": ["Picasso Museum", "El Born neighborhood", "Flamenco show evening"] },
+        { "day": 13, "title": "Barcelona – Costa Brava", "activities": ["Day trip to Costa Brava coastline", "Dalí Theatre-Museum in Figueres", "Evening tapas dinner"] },
+        { "day": 14, "title": "Barcelona Free Day", "activities": ["Montjuïc cable car & castle", "MNAC Museum visit", "Farewell gala dinner"] },
+        { "day": 15, "title": "Departure", "activities": ["Hotel checkout", "Transfer to Barcelona airport", "International departure"] }
+      ]
     },
     {
       "id": "3",
@@ -43,7 +91,24 @@
       "rating": "4.8",
       "tag": "Popular",
       "featured": true,
-      "inclusions": ["AC Hotels", "Breakfast", "AC Cab", "Entry Tickets"]
+      "inclusions": ["AC Hotels", "Breakfast", "AC Cab", "Entry Tickets"],
+      "overview": "India's legendary Golden Triangle connects three of the country's most iconic cities — Delhi, Agra, and Jaipur. This 7-day heritage tour takes you through Mughal grandeur, royal Rajput palaces, and vibrant bazaars, offering an unforgettable introduction to India's rich history and culture.",
+      "highlights": [
+        "Sunrise visit to the magnificent Taj Mahal",
+        "Explore Old Delhi's spice market and Red Fort",
+        "Amber Fort with optional elephant ride",
+        "City Palace and Hawa Mahal in Jaipur",
+        "Traditional Rajasthani folk dinner"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Delhi", "activities": ["Airport pickup & hotel check-in", "India Gate evening visit", "Welcome dinner with local cuisine"] },
+        { "day": 2, "title": "Old & New Delhi", "activities": ["Red Fort & Chandni Chowk spice market", "Jama Masjid & rickshaw ride", "Humayun's Tomb & Qutub Minar"] },
+        { "day": 3, "title": "Delhi to Agra", "activities": ["Morning drive to Agra (3–4 hrs)", "Agra Fort exploration", "Mehtab Bagh sunset view of Taj Mahal"] },
+        { "day": 4, "title": "Taj Mahal & Drive to Jaipur", "activities": ["Sunrise Taj Mahal visit (guided)", "Itimad-ud-Daulah (Baby Taj)", "Afternoon drive to Jaipur"] },
+        { "day": 5, "title": "Jaipur – Pink City", "activities": ["Amber Fort with jeep ride", "Jal Mahal photo stop", "City Palace & Jantar Mantar observatory"] },
+        { "day": 6, "title": "Jaipur – Markets & Culture", "activities": ["Hawa Mahal & Johari Bazaar", "Block printing workshop", "Rajasthani folk dinner at cultural show"] },
+        { "day": 7, "title": "Return Delhi & Departure", "activities": ["Morning drive to Delhi", "Last-minute shopping at Connaught Place", "Airport transfer & departure"] }
+      ]
     },
     {
       "id": "4",
@@ -58,7 +123,26 @@
       "rating": "4.6",
       "tag": "Value",
       "featured": false,
-      "inclusions": ["Flights", "Budget Hotels", "Breakfast", "Shared Tours"]
+      "inclusions": ["Flights", "Budget Hotels", "Breakfast", "Shared Tours"],
+      "overview": "The ultimate budget adventure across three incredible Himalayan nations. Experience Kathmandu's sacred temples, Bhutan's spiritual Tiger's Nest monastery, and return through India's hill towns. A life-changing journey that proves extraordinary travel doesn't have to break the bank.",
+      "highlights": [
+        "Hike to Bhutan's iconic Tiger's Nest Monastery",
+        "Sunrise view of the Himalayas from Nagarkot",
+        "Pashupatinath Temple and Boudhanath Stupa in Kathmandu",
+        "Traditional Bhutanese hot stone bath",
+        "Darjeeling tea estate visit"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Kathmandu", "activities": ["Airport pickup & budget hotel check-in", "Thamel exploration & street food dinner", "Welcome briefing by local guide"] },
+        { "day": 2, "title": "Kathmandu Valley", "activities": ["Pashupatinath Temple & Boudhanath Stupa", "Patan Durbar Square", "Swayambhunath (Monkey Temple)"] },
+        { "day": 3, "title": "Nagarkot Sunrise", "activities": ["Early drive to Nagarkot", "Sunrise Himalaya panorama view", "Return & afternoon free in Kathmandu"] },
+        { "day": 4, "title": "Fly to Paro, Bhutan", "activities": ["Morning flight to Paro", "National Museum of Bhutan", "Rinpung Dzong monastery visit"] },
+        { "day": 5, "title": "Tiger's Nest Hike", "activities": ["Full-day hike to Paro Taktsang (Tiger's Nest)", "Prayer flag valleys and cliff views", "Traditional Bhutanese dinner at farmhouse"] },
+        { "day": 6, "title": "Thimphu – Bhutan Capital", "activities": ["Thimphu city tour & Buddha Dordenma statue", "Traditional hot stone bath spa", "Weekend craft market visit"] },
+        { "day": 7, "title": "Fly to Bagdogra, Darjeeling", "activities": ["Flight to Bagdogra, jeep to Darjeeling", "Tea estate tour & tasting", "Darjeeling Mall Road evening"] },
+        { "day": 8, "title": "Darjeeling Tiger Hill", "activities": ["Tiger Hill sunrise view of Kanchenjunga", "Toy train joyride (heritage)", "Peace Pagoda & Himalayan Mountaineering Institute"] },
+        { "day": 9, "title": "Return & Departure", "activities": ["Drive to Bagdogra", "Flight to home city", "Trip ends with Himalayan memories"] }
+      ]
     },
     {
       "id": "5",
@@ -73,7 +157,24 @@
       "rating": "4.7",
       "tag": "Social",
       "featured": false,
-      "inclusions": ["Flights", "Hotels", "All Meals", "Group Activities", "Transfers"]
+      "inclusions": ["Flights", "Hotels", "All Meals", "Group Activities", "Transfers"],
+      "overview": "The perfect group getaway combining the rich culture of Sri Lanka with the paradise beaches of the Maldives. Visit ancient temples, go whale watching, and then relax in overwater villas with crystal-clear lagoons. Designed for groups who want to bond over unforgettable shared experiences.",
+      "highlights": [
+        "Climb the ancient Sigiriya Rock Fortress",
+        "Blue whale watching off Mirissa coast",
+        "Snorkeling in Maldivian coral reefs",
+        "Cultural show at Kandy's Temple of the Tooth",
+        "Group sunset BBQ on a Maldives sandbank"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Colombo, Sri Lanka", "activities": ["Airport pickup & group hotel check-in", "Colombo city tour & Gangaramaya Temple", "Group welcome dinner"] },
+        { "day": 2, "title": "Sigiriya Rock Fortress", "activities": ["Drive to Sigiriya (UNESCO World Heritage)", "Climb Lion Rock – panoramic views", "Dambulla Cave Temple visit"] },
+        { "day": 3, "title": "Kandy – Hill Country", "activities": ["Kandy train journey through tea country", "Temple of the Tooth Relic", "Kandyan cultural dance & dinner"] },
+        { "day": 4, "title": "Mirissa – Whale Watching", "activities": ["Drive to Mirissa beach", "Whale & dolphin watching boat trip", "Beach afternoon & seafood dinner"] },
+        { "day": 5, "title": "Fly to Maldives", "activities": ["Morning flight to Male, Maldives", "Speedboat transfer to resort island", "Snorkeling welcome session"] },
+        { "day": 6, "title": "Maldives Paradise Day", "activities": ["Full-day water sports: kayaking, paddleboarding", "Glass-bottom boat reef tour", "Sunset sandbank BBQ & bonfire"] },
+        { "day": 7, "title": "Departure from Maldives", "activities": ["Morning island walk & breakfast", "Speedboat to Male airport", "Departure with group memories"] }
+      ]
     },
     {
       "id": "6",
@@ -88,7 +189,20 @@
       "rating": "4.5",
       "tag": "Quick",
       "featured": false,
-      "inclusions": ["Hotels", "Breakfast", "Transfers", "Activities"]
+      "inclusions": ["Hotels", "Breakfast", "Transfers", "Activities"],
+      "overview": "A perfect 3-day escape for those who crave a quick recharge. Choose between Goa's golden beaches and vibrant nightlife or Himachal's misty mountains and apple orchards. Both options offer curated experiences that pack maximum joy into a short weekend getaway.",
+      "highlights": [
+        "Private beach access at North Goa resort",
+        "Watersports: parasailing, jet-ski, banana boat",
+        "Himachal mountain drive to Solang Valley",
+        "Sunrise yoga with Himalayan backdrop",
+        "Local cuisine tasting experience"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive & Check-In", "activities": ["Arrival at Goa/Manali & hotel check-in", "Afternoon leisure at beach or hill viewpoint", "Evening local market exploration & dinner"] },
+        { "day": 2, "title": "Adventure & Exploration", "activities": ["Morning watersports (Goa) or valley trek (Himachal)", "Afternoon sightseeing & local cafe lunch", "Sunset point visit & farewell dinner"] },
+        { "day": 3, "title": "Leisure & Departure", "activities": ["Relaxed breakfast & hotel checkout", "Last-minute souvenir shopping", "Airport/station transfer & departure"] }
+      ]
     },
     {
       "id": "7",
@@ -103,7 +217,23 @@
       "rating": "4.8",
       "tag": "Kids ♥",
       "featured": false,
-      "inclusions": ["Flights", "Hotels", "All Meals", "Kid Activities", "Transfers"]
+      "inclusions": ["Flights", "Hotels", "All Meals", "Kid Activities", "Transfers"],
+      "overview": "A family adventure designed around creating memories that children and parents will cherish forever. Start with Kerala's backwater houseboats, spice gardens, and elephant interactions, then head to Andaman for clear-water beaches, glass-bottom boat rides, and snorkeling in one of India's most pristine marine ecosystems.",
+      "highlights": [
+        "Overnight houseboat stay on Kerala backwaters",
+        "Elephant interaction at a responsible sanctuary",
+        "Glass-bottom boat ride in Andaman",
+        "Snorkeling at Elephant Beach, Havelock",
+        "Cellular Jail light & sound show"
+      ],
+      "itinerary": [
+        { "day": 1, "title": "Arrive Kochi, Kerala", "activities": ["Airport pickup & hotel check-in", "Kerala Folklore Museum visit (kids love it)", "Fort Kochi sunset walk & seafood dinner"] },
+        { "day": 2, "title": "Houseboat Backwaters", "activities": ["Drive to Alleppey for houseboat boarding", "Backwater cruise through paddy fields & villages", "Overnight stay on houseboat with all meals"] },
+        { "day": 3, "title": "Munnar Hills & Fly to Andaman", "activities": ["Morning spice plantation tour", "Tea museum visit (interactive for kids)", "Evening flight to Port Blair, Andaman"] },
+        { "day": 4, "title": "Port Blair – Cellular Jail", "activities": ["Cellular Jail & National Memorial tour", "Corbyn's Cove beach afternoon", "Cellular Jail light & sound show"] },
+        { "day": 5, "title": "Havelock Island", "activities": ["Ferry to Havelock Island", "Elephant Beach snorkeling", "Glass-bottom boat reef tour"] },
+        { "day": 6, "title": "Departure", "activities": ["Morning leisurely breakfast", "Return ferry to Port Blair", "Airport transfer & departure"] }
+      ]
     }
   ],
   "services": [
