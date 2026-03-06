@@ -1,7 +1,6 @@
-import { Component, HostListener, OnDestroy, signal } from '@angular/core';
+import { Component, HostListener, OnDestroy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-
+import { Router, RouterLink } from '@angular/router';
 
 interface NavItem {
   label: string;
@@ -11,9 +10,17 @@ interface NavItem {
   href?: string;
 }
 
+interface SearchResult {
+  label: string;
+  sublabel: string;
+  category: string;
+  route: string[];
+  thumb: string;
+}
+
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
@@ -23,18 +30,22 @@ export class Navbar implements OnDestroy {
   isSearchOpen = signal(false);
   activeMenu = signal<string | null>(null);
   activeMobileAccordion = signal<string | null>(null);
+  searchQuery = signal('');
 
   // Timer used to delay hiding the mega menu so the user can
   // move the mouse from the nav link into the panel without it closing.
   private closeTimer: ReturnType<typeof setTimeout> | null = null;
 
+  constructor(private router: Router) {}
+
   navItems: NavItem[] = [
+    { label: 'Home', key: 'home', href: '/' },
     { label: 'Destinations', key: 'destinations', hasMega: true, href: '/destinations' },
     { label: 'Packages', key: 'packages', hasDropdown: true, href: '/packages' },
     { label: 'Honeymoon', key: 'honeymoon', hasDropdown: true, href: '/honeymoon' },
     { label: 'International', key: 'international', hasDropdown: true, href: '/international' },
     { label: 'Corporate', key: 'corporate', hasDropdown: true, href: '/corporate' },
-    { label: 'About Us', key: 'about', href: '/#why-us' },
+    { label: 'About Us', key: 'about', hasDropdown: true, href: '/about' },
   ];
 
   // ── Destinations ──────────────────────────────────────────────────
@@ -106,6 +117,75 @@ export class Navbar implements OnDestroy {
     { value: '15+', label: 'Years of Experience', icon: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=60&q=80' },
   ];
 
+  aboutStats = [
+    { value: '15+', label: 'Years of Experience' },
+    { value: '50K+', label: 'Happy Travelers' },
+    { value: '500+', label: 'Corporate Clients' },
+    { value: '4.9★', label: 'Google Rating' },
+  ];
+
+  // ── Search ────────────────────────────────────────────────────────
+  private readonly searchPool: SearchResult[] = [
+    ...this.domestic.map(d => ({
+      label: d.name, sublabel: d.nights, category: 'Domestic',
+      route: ['/package-detail', 'destinations-domestic', d.id], thumb: d.thumb,
+    })),
+    ...this.international.map(d => ({
+      label: d.name, sublabel: d.nights, category: 'International',
+      route: ['/package-detail', 'destinations-international', d.id], thumb: d.thumb,
+    })),
+    ...this.packages.map(p => ({
+      label: p.label, sublabel: p.desc, category: 'Package',
+      route: ['/packages'], thumb: p.image,
+    })),
+    ...this.honeymoonDestinations.map(h => ({
+      label: h.label, sublabel: h.nights, category: 'Honeymoon',
+      route: ['/package-detail', 'honeymoon', h.id], thumb: h.image,
+    })),
+    ...this.internationalRegions.map(r => ({
+      label: r.label, sublabel: `${r.count} packages`, category: 'Region',
+      route: ['/international'], thumb: r.image,
+    })),
+    ...this.corporateOptions.map(c => ({
+      label: c.label, sublabel: c.desc, category: 'Corporate',
+      route: ['/corporate'], thumb: c.image,
+    })),
+    ...this.travelStyles.map(s => ({
+      label: s.name, sublabel: '', category: 'Travel Style',
+      route: ['/packages'], thumb: s.thumb,
+    })),
+  ];
+
+  searchResults = computed<SearchResult[]>(() => {
+    const q = this.searchQuery().trim().toLowerCase();
+    if (q.length < 2) return [];
+    return this.searchPool
+      .filter(item =>
+        item.label.toLowerCase().includes(q) ||
+        item.sublabel.toLowerCase().includes(q) ||
+        item.category.toLowerCase().includes(q)
+      )
+      .slice(0, 8);
+  });
+
+  onSearchInput(event: Event) {
+    this.searchQuery.set((event.target as HTMLInputElement).value);
+  }
+
+  selectResult(result: SearchResult) {
+    this.router.navigate(result.route);
+    this.isSearchOpen.set(false);
+    this.searchQuery.set('');
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    if (this.isSearchOpen()) {
+      this.isSearchOpen.set(false);
+      this.searchQuery.set('');
+    }
+  }
+
   // ── Lifecycle ─────────────────────────────────────────────────────
   @HostListener('window:scroll')
   onScroll() { this.isScrolled.set(window.scrollY > 20); }
@@ -139,7 +219,10 @@ export class Navbar implements OnDestroy {
     document.body.style.overflow = this.isMobileMenuOpen() ? 'hidden' : '';
   }
 
-  toggleSearch() { this.isSearchOpen.update(v => !v); }
+  toggleSearch() {
+    this.isSearchOpen.update(v => !v);
+    if (!this.isSearchOpen()) this.searchQuery.set('');
+  }
 
   toggleMobileAccordion(key: string) {
     this.activeMobileAccordion.update(v => v === key ? null : key);

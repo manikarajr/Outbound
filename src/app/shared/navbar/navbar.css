@@ -354,3 +354,32 @@
     box-shadow: 0 0 0 3px rgba(122, 173, 92, 0.12);
     transition: all 0.2s ease;
 }
+
+/* ── Search Results ────────────────────────────── */
+.search-result-item {
+    background: rgba(0, 0, 0, 0.03);
+    color: #1a1a1a;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background: #eef5e9;
+    border-color: rgba(122, 173, 92, 0.25);
+}
+
+.search-category-badge {
+    color: var(--pista-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.search-hint-pill {
+    background: rgba(122, 173, 92, 0.1);
+    color: var(--pista-dark);
+    border: 1px solid rgba(122, 173, 92, 0.2);
+}
+
+.search-hint-pill:hover {
+    background: rgba(122, 173, 92, 0.2);
+}
