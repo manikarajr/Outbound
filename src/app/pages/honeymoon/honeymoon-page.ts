@@ -1,19 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-
-interface HoneymoonPackage {
-  title: string;
-  locations: string;
-  duration: string;
-  group: string;
-  price: string;
-  img: string;
-  badge: string;
-  badgeColor: string;
-  rating: string;
-  inclusions: string[];
-}
+import honeymoonData from '../../data/honeymoon.json';
 
 @Component({
   selector: 'app-honeymoon-page',
@@ -167,78 +154,5 @@ interface HoneymoonPackage {
   `]
 })
 export class HoneymoonPage {
-  honeymoonPackages: HoneymoonPackage[] = [
-    {
-      title: 'Maldives Honeymoon',
-      locations: 'Male · Ari Atoll · Baa Atoll',
-      duration: '4N / 5D',
-      group: 'Couples',
-      price: '₹89,999',
-      img: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=85',
-      badge: 'Most Popular',
-      badgeColor: '#FF1744',
-      rating: '5.0',
-      inclusions: ['Overwater Bungalow', 'All Meals', 'Snorkeling', 'Spa', 'Sunset Cruise']
-    },
-    {
-      title: 'Bali Romance',
-      locations: 'Denpasar · Ubud · Seminyak',
-      duration: '5N / 6D',
-      group: 'Couples',
-      price: '₹49,999',
-      img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=85',
-      badge: 'Romantic',
-      badgeColor: '#E91E63',
-      rating: '4.9',
-      inclusions: ['Resort Stay', 'Breakfast', 'Temple Tours', 'Couple Spa', 'Dinner Cruise']
-    },
-    {
-      title: 'Kashmir Dreams',
-      locations: 'Srinagar · Pahalgam',
-      duration: '5N / 6D',
-      group: 'Couples',
-      price: '₹39,999',
-      img: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=85',
-      badge: 'Scenic',
-      badgeColor: '#8B4513',
-      rating: '4.8',
-      inclusions: ['Houseboat', 'Breakfast', 'Dal Lake Cruise', 'Gondola Ride', 'Picnic']
-    },
-    {
-      title: 'Europe Romance',
-      locations: 'Paris · Venice · Vienna',
-      duration: '7N / 8D',
-      group: 'Couples',
-      price: '₹1,29,999',
-      img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=500&q=85',
-      badge: 'Premium',
-      badgeColor: '#1a1a1a',
-      rating: '5.0',
-      inclusions: ['5-Star Hotels', 'Breakfast', 'City Tours', 'Gondola Rides', 'Wine Tasting']
-    },
-    {
-      title: 'Kerala Backwaters',
-      locations: 'Kochi · Alleppey · Kumarakom',
-      duration: '3N / 4D',
-      group: 'Couples',
-      price: '₹24,999',
-      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=85',
-      badge: 'Tranquil',
-      badgeColor: '#7AAD5C',
-      rating: '4.7',
-      inclusions: ['Houseboat', 'Meals', 'Backwater Tour', 'Ayurveda Spa', 'Beach Time']
-    },
-    {
-      title: 'Seychelles Paradise',
-      locations: 'Male · Praslin · La Digue',
-      duration: '5N / 6D',
-      group: 'Couples',
-      price: '₹99,999',
-      img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=85',
-      badge: 'Exotic',
-      badgeColor: '#00BCD4',
-      rating: '4.9',
-      inclusions: ['Island Resort', 'All Meals', 'Beach Activities', 'Snorkeling', 'Sunset Sail']
-    }
-  ];
+  honeymoonPackages = honeymoonData.packages;
 }

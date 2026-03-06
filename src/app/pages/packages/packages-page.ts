@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import packagesData from '../../data/packages.json';
 
 interface Package {
   id: string;
@@ -19,7 +19,6 @@ interface Package {
 
 @Component({
   selector: 'app-packages-page',
-  standalone: true,
   imports: [CommonModule],
   template: `
     <!-- Hero Section -->
@@ -146,95 +145,10 @@ interface Package {
 export class PackagesPage {
   selectedTag: string | null = null;
 
-  packages: Package[] = [
-    {
-      id: '1',
-      title: 'Southeast Asia Explorer',
-      locations: 'Thailand · Vietnam · Singapore',
-      duration: '12N / 13D',
-      group: 'Family & Couples',
-      price: '₹59,999',
-      img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=700&q=85',
-      badge: 'Best Seller',
-      badgeColor: '#7AAD5C',
-      rating: '4.9',
-      tag: 'Popular',
-      inclusions: ['Flights', 'Hotels', 'Breakfast', 'Transfers', 'Guide']
-    },
-    {
-      id: '2',
-      title: 'Budget Wanderer',
-      locations: 'India · Nepal · Bhutan',
-      duration: '8N / 9D',
-      group: 'Budget Travelers',
-      price: '₹16,999',
-      img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&q=85',
-      badge: 'Value',
-      badgeColor: '#FF6B6B',
-      rating: '4.6',
-      tag: 'Value',
-      inclusions: ['Flights', 'Budget Hotels', 'Breakfast', 'Shared Tours']
-    },
-    {
-      id: '3',
-      title: 'Luxury European Escape',
-      locations: 'Paris · Rome · Barcelona',
-      duration: '14N / 15D',
-      group: 'All Groups',
-      price: '₹2,49,999',
-      img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=85',
-      badge: 'Premium',
-      badgeColor: '#1a1a1a',
-      rating: '5.0',
-      tag: '5★',
-      inclusions: ['Flights', '5-Star Hotels', 'All Meals', 'Private Transfers', 'Guide']
-    },
-    {
-      id: '4',
-      title: 'Group Adventure Tour',
-      locations: 'Sri Lanka · Maldives',
-      duration: '6N / 7D',
-      group: 'Group Travelers',
-      price: '₹44,999',
-      img: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&q=85',
-      badge: 'Social',
-      badgeColor: '#4A90E2',
-      rating: '4.7',
-      tag: 'Social',
-      inclusions: ['Flights', 'Hotels', 'All Meals', 'Group Activities', 'Transfers']
-    },
-    {
-      id: '5',
-      title: 'Weekend Gateway Bliss',
-      locations: 'Goa · Himachal',
-      duration: '2N / 3D',
-      group: 'Couples & Families',
-      price: '₹9,999',
-      img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=85',
-      badge: 'Quick',
-      badgeColor: '#FF9800',
-      rating: '4.5',
-      tag: 'Quick',
-      inclusions: ['Hotels', 'Breakfast', 'Transfers', 'Activities']
-    },
-    {
-      id: '6',
-      title: 'Family Fun Holidays',
-      locations: 'Kerala · Andaman',
-      duration: '5N / 6D',
-      group: 'Families',
-      price: '₹36,999',
-      img: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=500&q=85',
-      badge: 'Kids ♥',
-      badgeColor: '#E91E63',
-      rating: '4.8',
-      tag: 'Kids ♥',
-      inclusions: ['Flights', 'Hotels', 'All Meals', 'Kid Activities', 'Transfers']
-    }
-  ];
+  packages: Package[] = packagesData.packages;
 
   get uniqueTags(): string[] {
-    return ['Popular', 'Value', '5★', 'Social', 'Quick', 'Kids ♥'];
+    return packagesData.filterTags;
   }
 
   get filteredPackages(): Package[] {

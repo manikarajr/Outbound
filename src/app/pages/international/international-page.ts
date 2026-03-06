@@ -1,19 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-
-interface Region {
-  title: string;
-  locations: string;
-  duration: string;
-  group: string;
-  price: string;
-  img: string;
-  badge: string;
-  badgeColor: string;
-  rating: string;
-  inclusions: string[];
-}
+import internationalData from '../../data/international.json';
 
 @Component({
   selector: 'app-international-page',
@@ -170,78 +157,5 @@ interface Region {
   `]
 })
 export class InternationalPage {
-  regions: Region[] = [
-    {
-      title: 'Southeast Asia Explorer',
-      locations: 'Thailand · Vietnam · Singapore',
-      duration: '12N / 13D',
-      group: 'All Groups',
-      price: '₹59,999',
-      img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&q=85',
-      badge: 'Best Seller',
-      badgeColor: '#FF6B6B',
-      rating: '4.9',
-      inclusions: ['Hotels', 'Breakfast', 'Guided Tours', 'Cooking Class', 'Transfers']
-    },
-    {
-      title: 'European Grand Tour',
-      locations: 'Paris · Rome · Barcelona',
-      duration: '14N / 15D',
-      group: 'All Groups',
-      price: '₹1,49,999',
-      img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=85',
-      badge: 'Premium',
-      badgeColor: '#1a1a1a',
-      rating: '5.0',
-      inclusions: ['Hotels', 'Breakfast', 'City Tours', 'Museum Passes', 'Transfers']
-    },
-    {
-      title: 'Middle East Marvel',
-      locations: 'Dubai · Abu Dhabi · Jordan',
-      duration: '8N / 9D',
-      group: 'All Groups',
-      price: '₹69,999',
-      img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=85',
-      badge: 'Luxury',
-      badgeColor: '#FFD700',
-      rating: '4.8',
-      inclusions: ['Hotels', 'Breakfast', 'Desert Safari', 'Petra Tour', 'Transfers']
-    },
-    {
-      title: 'Far Eastern Wonders',
-      locations: 'Japan · South Korea · China',
-      duration: '15N / 16D',
-      group: 'Adventure',
-      price: '₹1,29,999',
-      img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&q=85',
-      badge: 'Cultural',
-      badgeColor: '#FF1744',
-      rating: '4.9',
-      inclusions: ['Hotels', 'All Meals', 'Guided Tours', 'Bullet Train', 'Transfers']
-    },
-    {
-      title: 'North America Adventure',
-      locations: 'USA · Canada · Mexico',
-      duration: '10N / 11D',
-      group: 'All Groups',
-      price: '₹99,999',
-      img: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=500&q=85',
-      badge: 'Nature',
-      badgeColor: '#4A90E2',
-      rating: '4.7',
-      inclusions: ['Hotels', 'Breakfast', 'National Parks', 'City Tours', 'Transfers']
-    },
-    {
-      title: 'South America Explorer',
-      locations: 'Peru · Brazil · Argentina',
-      duration: '12N / 13D',
-      group: 'Adventure',
-      price: '₹1,09,999',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=85',
-      badge: 'Adventure',
-      badgeColor: '#7AAD5C',
-      rating: '4.8',
-      inclusions: ['Hotels', 'Breakfast', 'Machu Picchu', 'Amazon Tour', 'Transfers']
-    }
-  ];
+  regions = internationalData.packages;
 }
