@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { SafeHtmlPipe } from '../pipes/safe-html.pipe';
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule, SafeHtmlPipe],
+  imports: [CommonModule, RouterLink, SafeHtmlPipe],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
@@ -12,16 +13,22 @@ export class Footer {
   currentYear = new Date().getFullYear();
 
   quickLinks = [
-    { label: 'Destinations', href: '#destinations' },
-    { label: 'Packages', href: '#packages' },
-    { label: 'Honeymoon', href: '#honeymoon' },
-    { label: 'Corporate Travel', href: '#' },
-    { label: 'About Us', href: '#why-us' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Destinations',    route: '/destinations' },
+    { label: 'Packages',        route: '/packages' },
+    { label: 'Honeymoon',       route: '/honeymoon' },
+    { label: 'Corporate Travel', route: '/corporate' },
+    { label: 'About Us',        route: '/about' },
+    { label: 'Gallery',         route: '/gallery' },
   ];
 
   topDests = [
-    'Maldives', 'Bali', 'Kashmir', 'Kerala', 'Dubai', 'Thailand', 'Singapore',
+    { label: 'Maldives',   fragment: 'international' },
+    { label: 'Bali',       fragment: 'international' },
+    { label: 'Kashmir',    fragment: 'domestic' },
+    { label: 'Kerala',     fragment: 'domestic' },
+    { label: 'Dubai',      fragment: 'international' },
+    { label: 'Thailand',   fragment: 'international' },
+    { label: 'Singapore',  fragment: 'international' },
   ];
 
   socials = [

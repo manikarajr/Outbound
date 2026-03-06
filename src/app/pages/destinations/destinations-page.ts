@@ -24,7 +24,7 @@ import destinationsData from '../../data/destinations.json';
       <div class="max-w-6xl mx-auto">
 
         <!-- Domestic India Section -->
-        <section class="mb-20">
+        <section id="domestic" class="mb-20">
           <div class="mb-12">
             <h2 class="text-4xl font-bold text-gray-900 mb-2">Domestic India</h2>
             <p class="text-gray-600 text-lg">
@@ -102,7 +102,7 @@ import destinationsData from '../../data/destinations.json';
         </section>
 
         <!-- International Section -->
-        <section class="mb-20">
+        <section id="international" class="mb-20">
           <div class="mb-12">
             <h2 class="text-4xl font-bold text-gray-900 mb-2">International Destinations</h2>
             <p class="text-gray-600 text-lg">

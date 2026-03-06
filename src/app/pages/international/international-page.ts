@@ -106,30 +106,34 @@ import internationalData from '../../data/international.json';
           <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Why Travel Internationally?</h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="text-center">
-              <svg class="w-14 h-14 text-blue-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                <path d="M12 2v20M2 12h20M5.64 5.64a8 8 0 0 1 12.72 0M5.64 18.36a8 8 0 0 0 12.72 0" stroke="currentColor" stroke-width="2" fill="none"/>
+              <!-- Diverse Cultures: globe/world icon -->
+              <svg class="w-14 h-14 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
               </svg>
               <h3 class="text-lg font-bold text-gray-900 mb-2">Diverse Cultures</h3>
               <p class="text-gray-600 text-sm">Experience rich traditions and unique lifestyles</p>
             </div>
             <div class="text-center">
-              <svg class="w-14 h-14 text-amber-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5 18H7v-4h7v4zm5-5H3V4h16v11z"/>
+              <!-- Historical Sites: building/landmark columns icon -->
+              <svg class="w-14 h-14 text-amber-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/>
               </svg>
               <h3 class="text-lg font-bold text-gray-900 mb-2">Historical Sites</h3>
               <p class="text-gray-600 text-sm">Visit UNESCO world heritage and iconic landmarks</p>
             </div>
             <div class="text-center">
-              <svg class="w-14 h-14 text-orange-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M11 9H9V7h2v2zm0 4H9v-2h2v2zm2-4h2V7h-2v2zm2 4h2v-2h-2v2zM7 9H5V7h2v2zm0 4H5v-2h2v2zm8-4h2V7h-2v2zm2 4h2v-2h-2v2zM3 3h18v2H3V3zm0 4h18v12H3V7z"/>
-              </svg>
+              <!-- Culinary Adventures: fork and knife icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-14 h-14 text-orange-600 mx-auto mb-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+</svg>
+
               <h3 class="text-lg font-bold text-gray-900 mb-2">Culinary Adventures</h3>
               <p class="text-gray-600 text-sm">Taste authentic cuisines from around the world</p>
             </div>
             <div class="text-center">
+              <!-- Personal Growth: arrow trending up icon -->
               <svg class="w-14 h-14 text-purple-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6.268 6.854a5 5 0 1 0 7.07 7.071M12 5v14m0 0l-4-4m4 4l4-4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
               </svg>
               <h3 class="text-lg font-bold text-gray-900 mb-2">Personal Growth</h3>
               <p class="text-gray-600 text-sm">Expand horizons and create lasting memories</p>
