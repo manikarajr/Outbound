@@ -29,7 +29,7 @@ interface CorporateStat {
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
-    <section class="relative h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
+    <section class="relative mt-[72px] h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80')"></div>
       <div class="absolute inset-0 bg-black/55"></div>
       <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
@@ -223,7 +223,7 @@ interface CorporateStat {
             <a [routerLink]="['/']" fragment="contact" class="bg-[#7AAD5C] hover:bg-[#5C8A3E] text-white font-bold px-8 py-3.5 rounded-full transition-colors duration-200">
               Get a Quote
             </a>
-            <a href="tel:+919999999999" class="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-slate-700 transition-all duration-200">
+            <a href="tel:+919442282911" class="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-slate-700 transition-all duration-200">
               Schedule a Call
             </a>
           </div>

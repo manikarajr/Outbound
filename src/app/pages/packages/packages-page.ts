@@ -23,7 +23,7 @@ interface Package {
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
-    <section class="relative h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
+    <section class="relative mt-[72px] h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80')"></div>
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
