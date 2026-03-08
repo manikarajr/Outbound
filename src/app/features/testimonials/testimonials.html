@@ -172,7 +172,17 @@
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="date" class="form-input min-w-0" [min]="today" />
+            <!-- Date input with custom placeholder overlay for cross-device visibility -->
+            <div class="relative min-w-0">
+              <input type="date" #dateRef class="form-input min-w-0 w-full" [min]="today"
+                (input)="travelDate = dateRef.value" />
+              @if (!travelDate) {
+                <span class="absolute inset-0 flex items-center px-4 pointer-events-none select-none"
+                  style="color: rgba(255,255,255,0.45); font-size: 16px; font-family: inherit;">
+                  Travel Date
+                </span>
+              }
+            </div>
             <!-- Select with custom arrow for cross-device consistency -->
             <div class="relative min-w-0">
               <select class="form-input cursor-pointer pr-10">

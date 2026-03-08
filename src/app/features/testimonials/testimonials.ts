@@ -47,6 +47,7 @@ export class Testimonials {
   ];
 
   today = new Date().toISOString().split('T')[0];
+  travelDate = '';
 
   destinations = [
     'Maldives', 'Bali', 'Thailand', 'Vietnam', 'Dubai', 'Singapore',
