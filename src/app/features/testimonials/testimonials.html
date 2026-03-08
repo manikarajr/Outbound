@@ -177,7 +177,7 @@
               <input type="date" #dateRef class="form-input min-w-0 w-full" [min]="today"
                 (input)="travelDate = dateRef.value" />
               @if (!travelDate) {
-                <span class="absolute inset-0 flex items-center px-4 pointer-events-none select-none"
+                <span class="absolute inset-0 flex items-center px-4 pointer-events-none select-none sm:hidden"
                   style="color: rgba(255,255,255,0.45); font-size: 16px; font-family: inherit;">
                   Travel Date
                 </span>
