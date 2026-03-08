@@ -46,6 +46,8 @@ export class Testimonials {
     'Flexible cancellation & rescheduling policy',
   ];
 
+  today = new Date().toISOString().split('T')[0];
+
   destinations = [
     'Maldives', 'Bali', 'Thailand', 'Vietnam', 'Dubai', 'Singapore',
     'Kashmir', 'Andaman', 'Kerala', 'Rajasthan', 'Europe', 'USA',

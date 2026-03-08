@@ -151,29 +151,28 @@
       </div>
 
       <!-- Right: Form -->
-      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-8 backdrop-blur-sm">
         <h3 class="font-body font-semibold text-white text-lg mb-6">Get a Free Quote</h3>
         <form class="space-y-4">
-          <div class="grid grid-cols-2 gap-4">
-            <input type="text" placeholder="Your Name" class="form-input col-span-2 sm:col-span-1" />
-            <input type="tel" placeholder="Phone Number" class="form-input col-span-2 sm:col-span-1" />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="Your Name" autocomplete="name" class="form-input" />
+            <input type="tel" placeholder="Phone Number" autocomplete="tel" inputmode="tel" class="form-input" />
           </div>
-          <input type="email" placeholder="Email Address" class="form-input" />
+          <input type="email" placeholder="Email Address" autocomplete="email" inputmode="email" class="form-input" />
           <select class="form-input cursor-pointer">
             <option value="" style="background:#1a1a1a;">Select Destination</option>
             <option *ngFor="let d of destinations" [value]="d" style="background:#1a1a1a;">{{ d }}</option>
           </select>
-          <div class="grid grid-cols-2 gap-4">
-            <input type="date" placeholder="Travel Date" class="form-input" />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="date" class="form-input" [min]="today" />
             <select class="form-input cursor-pointer">
-              <option value="" style="background:#1a1a1a;">Travelers</option>
-              <option *ngFor="let n of [1,2,3,4,5,'6+']" style="background:#1a1a1a;">{{ n }} Person{{ n !== 1 ? 's' : ''
-                }}</option>
+              <option value="" style="background:#1a1a1a;">No. of Travelers</option>
+              <option *ngFor="let n of [1,2,3,4,5,'6+']" style="background:#1a1a1a;">{{ n }} Person{{ n !== 1 ? 's' : '' }}</option>
             </select>
           </div>
           <textarea rows="3" placeholder="Any special requirements?" class="form-input resize-none"></textarea>
           <button type="submit"
-            class="w-full py-3.5 rounded-xl font-body font-semibold text-sm tracking-wide text-white transition-all duration-200 hover:shadow-pista hover:-translate-y-0.5"
+            class="w-full py-3.5 rounded-xl font-body font-semibold text-sm tracking-wide text-white transition-all duration-200 hover:shadow-pista hover:-translate-y-0.5 active:scale-[0.98]"
             style="background: linear-gradient(135deg, #7AAD5C 0%, #5C8A3E 100%);">
             Send My Enquiry →
           </button>
