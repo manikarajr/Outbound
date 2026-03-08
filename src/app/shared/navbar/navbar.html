@@ -121,7 +121,7 @@
                   <span class="text-white/60 text-[9px] tracking-[0.3em] uppercase mb-2 block">Featured
                     Experience</span>
                   <p class="text-white font-bold text-xl leading-tight mb-4">Explore the World<br>with Confidence</p>
-                  <a href="#contact"
+                  <a routerLink="/" fragment="contact" (click)="closeMenu()"
                     class="featured-btn text-xs font-bold text-white px-5 py-2.5 rounded-full text-center block">Plan
                     Your Journey →</a>
                 </div>
@@ -355,8 +355,8 @@
                   <span class="text-white/60 text-[9px] tracking-[0.3em] uppercase mb-2 block">Our People</span>
                   <p class="text-white font-bold text-xl leading-tight mb-1">Passionate Experts,<br>Real Travelers</p>
                   <p class="text-white/60 text-xs mb-4">A team that has explored every destination we recommend.</p>
-                  <a routerLink="/about" (click)="closeMenu()"
-                    class="featured-btn text-xs font-bold text-white px-5 py-2.5 rounded-full text-center block">Meet the Team →</a>
+                  <a routerLink="/" fragment="contact" (click)="closeMenu()"
+                    class="featured-btn text-xs font-bold text-white px-5 py-2.5 rounded-full text-center block">Meet the Team</a>
                 </div>
               </div>
 
@@ -374,7 +374,7 @@
                 <p class="text-white font-bold text-base">Corporate Travel Solutions</p>
                 <p class="text-white/60 text-xs tracking-wider mt-0.5">MICE, team outings & incentive programs</p>
               </div>
-              <a href="#corporate" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">Get a Quote</a>
+              <a routerLink="/" fragment="contact" (click)="closeMenu()" class="cta-pill text-xs font-bold px-4 py-1.5 rounded-full">Get a Quote</a>
             </div>
             <div class="mega-body p-6">
               <div class="grid grid-cols-4 gap-4">
@@ -431,7 +431,7 @@
         </svg>
       </a>
       <div class="w-px h-5 bg-white/20 mx-1"></div>
-      <a [routerLink]="['/']"
+      <a routerLink="/" fragment="contact"
         class="cta-main px-5 py-2.5 rounded-full text-[0.82rem] font-bold tracking-wide whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5">
         Plan Your Trip
       </a>
@@ -719,7 +719,7 @@
         </svg>
         WhatsApp Us
       </a>
-      <a [routerLink]="['/']" (click)="toggleMobileMenu()"
+      <a routerLink="/" fragment="contact" (click)="toggleMobileMenu()"
         class="flex items-center justify-center w-full py-3.5 rounded-xl text-white font-bold text-sm"
         style="background-color:#7AAD5C;">
         Plan Your Trip

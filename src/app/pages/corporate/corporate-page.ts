@@ -29,12 +29,12 @@ interface CorporateStat {
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-slate-700 to-[#7AAD5C] text-white py-28 px-6">
-      <div class="max-w-6xl mx-auto text-center">
+    <section class="relative h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80')"></div>
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold mb-4">Corporate Travel Solutions</h1>
-        <p class="text-lg md:text-xl text-white/90 mb-2">
-          MICE, team outings & incentive programs
-        </p>
+        <p class="text-lg md:text-xl text-white/90 mb-2">MICE, team outings & incentive programs</p>
         <p class="text-white/70">Boost productivity and strengthen team bonds with tailored corporate travel experiences</p>
       </div>
     </section>
@@ -220,12 +220,12 @@ interface CorporateStat {
             Contact our corporate travel specialists for a customized proposal tailored to your organization
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-[#7AAD5C] hover:bg-[#5C8A3E] text-white font-bold px-8 py-3.5 rounded-full transition-colors duration-200">
-              Get a Quote →
-            </button>
-            <button class="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-slate-700 transition-all duration-200">
+            <a [routerLink]="['/']" fragment="contact" class="bg-[#7AAD5C] hover:bg-[#5C8A3E] text-white font-bold px-8 py-3.5 rounded-full transition-colors duration-200">
+              Get a Quote
+            </a>
+            <a href="tel:+919999999999" class="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-slate-700 transition-all duration-200">
               Schedule a Call
-            </button>
+            </a>
           </div>
         </section>
 

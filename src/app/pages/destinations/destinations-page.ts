@@ -9,12 +9,12 @@ import destinationsData from '../../data/destinations.json';
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-[#7AAD5C] to-[#5C8A3E] text-white py-28 px-6">
-      <div class="max-w-6xl mx-auto text-center">
+    <section class="relative h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80')"></div>
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold mb-4">Explore Destinations</h1>
-        <p class="text-lg md:text-xl text-white/90 mb-2">
-          Discover handcrafted journeys to the world's most beautiful destinations
-        </p>
+        <p class="text-lg md:text-xl text-white/90 mb-2">Discover handcrafted journeys to the world's most beautiful destinations</p>
         <p class="text-white/70">From domestic retreats to international adventures, find your perfect escape</p>
       </div>
     </section>
@@ -185,9 +185,9 @@ import destinationsData from '../../data/destinations.json';
           <p class="text-lg text-white/90 mb-8">
             Let our travel experts help you plan your perfect getaway
           </p>
-          <button class="bg-white text-[#7AAD5C] font-bold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors duration-200 text-lg">
+          <a [routerLink]="['/']" fragment="contact" class="bg-white text-[#7AAD5C] font-bold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors duration-200 text-lg">
             Plan Your Journey →
-          </button>
+          </a>
         </section>
 
       </div>

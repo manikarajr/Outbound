@@ -9,12 +9,12 @@ import internationalData from '../../data/international.json';
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-blue-600 to-[#7AAD5C] text-white py-28 px-6">
-      <div class="max-w-6xl mx-auto text-center">
+    <section class="relative h-80 md:h-[480px] flex items-center justify-center text-white overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80')"></div>
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold mb-4">International Destinations</h1>
-        <p class="text-lg md:text-xl text-white/90 mb-2">
-          The world is your itinerary
-        </p>
+        <p class="text-lg md:text-xl text-white/90 mb-2">The world is your itinerary</p>
         <p class="text-white/70">Explore incredible destinations across continents with expert guidance</p>
       </div>
     </section>
@@ -147,9 +147,9 @@ import internationalData from '../../data/international.json';
           <p class="text-lg text-white/90 mb-8">
             Our visa assistance, travel insurance, and 24/7 support make international travel hassle-free
           </p>
-          <button class="bg-white text-blue-600 font-bold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors duration-200 text-lg">
+          <a [routerLink]="['/']" fragment="contact" class="bg-white text-blue-600 font-bold px-8 py-3.5 rounded-full hover:bg-gray-100 transition-colors duration-200 text-lg">
             Plan Your Journey →
-          </button>
+          </a>
         </section>
 
       </div>
